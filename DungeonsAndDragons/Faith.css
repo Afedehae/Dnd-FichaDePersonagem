@@ -1,0 +1,54 @@
+textarea{
+  resize: none;
+}
+#Character{
+  width: 100%;
+  font-size: 13px;
+}
+#Vermelho{
+  background-color: lightcoral;
+}
+#Verde{
+  background-color: springgreen;
+}
+#Marrom{
+  background-color: Tan;
+}
+#Azul{
+  background-color: lightskyblue;
+}
+#Violeta{
+  background-color: violet;
+}
+#Amarelo{
+  background-color: palegoldenrod;
+}
+button{
+  background-color: transparent;
+  border-color: gray;
+}
+#TabelaPericias{
+  position: absolute;
+  font-size: 13px;
+}
+#TabelaResistencia{
+  position: absolute;
+  width: 190px;
+  top: 355px;
+  left: 221px;
+  font-size: 13px;
+}
+#TabelaAtributos{
+  position: absolute;
+  width: 190px;
+  left: 221px;
+  font-size: 13px;
+}
+select{
+  width: 150px;
+}
+.TabelasCheck{
+  position: relative;
+  left: 816px;
+  bottom: 552px;
+}

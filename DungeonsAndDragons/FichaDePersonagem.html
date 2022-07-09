@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang=pt dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>FichaDeCriação</title>
+    <script type="text/javascript" src="Magick.js"></script>
+    <link rel="stylesheet" href="Faith.css">
+  </head>
+  <body>
+    <table id="Character" border="1">
+      <tr>
+          <td>
+            <label for="">Nome: </label>
+            <input type="text" placeholder="Digite aqui">
+          </td>
+        <td>
+          <label for="Raça">Raça: </label>
+          <select onchange="RaçaTudo()" id="Raça">
+            <option selected>Nda</option>
+            <option value="Anao">Anão</option>
+            <option value="Elfo">Elfo</option>
+            <option value="Halfling">Halfling</option>
+            <option value="Humano">Humano</option>
+            <option value="Draconato">Draconato</option>
+            <option value="Gnomo">Gnomo</option>
+            <option value="MeioElfo">Meio-Elfo</option>
+            <option value="MeioOrc">Meio-Orc</option>
+            <option value="Tiefling">Tiefling</option>
+          </select>
+        </td>
+        <td id="SubRaçaAnao" hidden>
+          <label for="SubAnao">SubRaça: </label>
+          <select onchange="RaçaTudo()" id="SubAnao">
+            <option selected>Nda</option>
+            <option value="AnaoColina">Anão_da_Colina</option>
+            <option value="AnaoMontanha">Anão_da_Montanha</option>
+          </select>
+        </td>
+        <td id="SubRaçaElfo" hidden>
+          <label for="SubElfo">SubRaça: </label>
+          <select onchange="RaçaTudo()" id="SubElfo">
+            <option selected>Nda</option>
+            <option value="AltoElfo">Alto_Elfo</option>
+            <option value="ElfoFloresta">Elfo_da_Floresta</option>
+            <option value="ElfoNegro">Elfo_Negro(Drow)</option>
+          </select>
+        </td>
+        <td id="SubRaçaHalfling" hidden>
+          <label for="SubHalfling">SubRaça: </label>
+          <select onchange="RaçaTudo()" id="SubHalfling">
+            <option selected>Nda</option>
+            <option value="HalflingPesLeves">Pés_Leves</option>
+            <option value="HalflingRobusto">Robusto</option>
+          </select>
+        </td>
+        <td id="AncestralidadeDraconica" hidden>
+          <label for="AncestralDraconico">Ancestralidade: </label>
+          <select id="AncestralDraconico">
+            <option selected>Nda</option>
+            <option value="DracoAzul">Azul</option>
+            <option value="DracoBranco">Branco</option>
+            <option value="DracoBronze">Bronze</option>
+            <option value="DracoCobre">Cobre</option>
+            <option value="DracoLatao">Latão</option>
+            <option value="DracoNegro">Negro</option>
+            <option value="DracoOuro">Ouro</option>
+            <option value="DracoPrata">Prata</option>
+            <option value="DracoVerde">Verde</option>
+            <option value="DracoVermelho">Vermelho</option>
+          </select>
+        </td>
+        <td id="SubRaçaGnomo" hidden>
+          <label for="SubGnomo">SubRaça: </label>
+          <select onchange="RaçaTudo()" id="SubGnomo">
+            <option selected>Nda</option>
+            <option value="GnomoFloresta">Gnomo_da_Floresta</option>
+            <option value="GnomoRocha">Gnomo_das_Rochas</option>
+          </select>
+        </td>
+        <td>
+          <label for="Classe">Classe: </label>
+          <select onchange="ClasseTudo()" id="Classe">
+            <option selected>Nda</option>
+            <option value="Barbaro">Bárbaro</option>
+            <option value="Bardo">Bardo</option>
+            <option value="Bruxo">Bruxo</option>
+            <option value="Clerigo">Clérigo</option>
+            <option value="Druida">Druida</option>
+            <option value="Feiticeiro">Feiticeiro</option>
+            <option value="Guerreiro">Guerreiro</option>
+            <option value="Ladino">Ladino</option>
+            <option value="Mago">Mago</option>
+            <option value="Monge">Monge</option>
+            <option value="Paladino">Paladino</option>
+            <option value="Patrulheiro">Patrulheiro</option>
+          </select>
+        </td>
+        <td>
+          <label for="Antecedente">Antecedente: </label>
+          <select id="Antecedente">
+            <option selected>Nda</option>
+            <option value="Acólito">Acólito</option>
+            <option value="ArtesaoGuilda">Artesão_de_Guilda</option>
+            <option value="Artista">Artista</option>
+            <option value="Charlatão">Charlatão</option>
+            <option value="Criminoso">Criminoso</option>
+            <option value="Eremita">Eremita</option>
+            <option value="Forasteiro">Forasteiro</option>
+            <option value="HeroiPovo">Herói_do_Povo</option>
+            <option value="Marinheiro">Marinheiro</option>
+            <option value="Nobre">Nobre</option>
+            <option value="Orfao">Órfão</option>
+            <option value="Sabio">Sábio</option>
+            <option value="Soldado">Soldado</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+
+    <table id="Character" border="1">
+      <tr>
+        <td id="IdiomaExtra" hidden>
+          <label for="ExtraIdioma">Idioma_Extra: </label>
+          <select id="ExtraIdioma" onchange="ClasseTudo()">
+            <option value="Anao">Anão</option>
+            <option value="Comum">Comum</option>
+            <option value="Elfico">Élfico</option>
+            <option value="Gigante">Gigante</option>
+            <option value="Gnomico">Gnômico</option>
+            <option value="Goblin">Goblin</option>
+            <option value="Halfling">Halfling</option>
+            <option value="Orc">Orc</option>
+            <option value="Abissal">Abissal</option>
+            <option value="Celestial">Celestial</option>
+            <option value="DialetoSubterraneo">Dialeto_Subterrâneo</option>
+            <option value="Draconico">Dracônico</option>
+            <option value="Infernal">Infernal</option>
+            <option value="Primordial">Primordial</option>
+            <option value="Silvestre">Silvestre</option>
+            <option value="Subcomum">Subcomum</option>
+          </select>
+        </td>
+        <td id="EscolhaFerramentasAnao" hidden>
+          <label for="FerramentasAnao">Ferramenta_de_artesão: </label>
+          <select id="FerramentasAnao" onchange="ClasseTudo()">
+            <option value="FerramentasFerreiro">Ferramentas_de_Ferreiro</option>
+            <option value="SuprimentosCervejeiro">Suprimentos_de_Cervejeiro</option>
+            <option value="FerramentasPedreiro">Ferramentas_de_Pedreiro</option>
+          </select>
+        </td>
+        <td id="EscolhaPericiaExtraMeioElfo" hidden>
+          <label for="PericiaExtraMeioElfo">Pericia_Extra: </label>
+          <select id="PericiaExtraMeioElfo1" onchange="ClasseTudo()">
+            <option value="Acrobacia">Acrobacia</option>
+            <option value="Arcanismo">Arcanismo</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Atuaçao">Atuação</option>
+            <option value="Blefar">Blefar</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Historia">História</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="LidarAnimais">Lidar_Com_Animais</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Prestidigitaçao">Prestidigitação</option>
+            <option value="Religiao">Religião</option>
+            <option value="Sobrevivencia">Sobrevivência</option>
+          </select>
+          <select id="PericiaExtraMeioElfo2" onchange="ClasseTudo()">
+            <option value="Acrobacia">Acrobacia</option>
+            <option value="Arcanismo">Arcanismo</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Atuaçao">Atuação</option>
+            <option value="Blefar">Blefar</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Historia">História</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="LidarAnimais">Lidar_Com_Animais</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Prestidigitaçao">Prestidigitação</option>
+            <option value="Religiao">Religião</option>
+            <option value="Sobrevivencia">Sobrevivência</option>
+          </select>
+        </td>
+        <td id="EscolhaInstrumentoBardo" hidden>
+          <label for="InstrumentoBardo1">Instrumentos Musicais: </label>
+          <select id="InstrumentoBardo1" onchange="ClasseTudo()">
+            <option value="Alaude">Alaúde</option>
+            <option value="Flauta">Flauta</option>
+            <option value="FlautaPa">Flauta_de_Pã</option>
+            <option value="GaitaFoles">Gaita_de_Foles</option>
+            <option value="Lira">Lira</option>
+            <option value="Oboe">Oboé</option>
+            <option value="Tambor">Tambor</option>
+            <option value="Trombeta">Trombeta</option>
+            <option value="Violino">Violino</option>
+            <option value="Xilofone">Xilofone</option>
+          </select>
+          <select id="InstrumentoBardo2" onchange="ClasseTudo()">
+            <option value="Alaude">Alaúde</option>
+            <option value="Flauta">Flauta</option>
+            <option value="FlautaPa">Flauta_de_Pã</option>
+            <option value="GaitaFoles">Gaita_de_Foles</option>
+            <option value="Lira">Lira</option>
+            <option value="Oboe">Oboé</option>
+            <option value="Tambor">Tambor</option>
+            <option value="Trombeta">Trombeta</option>
+            <option value="Violino">Violino</option>
+            <option value="Xilofone">Xilofone</option>
+          </select>
+          <select id="InstrumentoBardo3" onchange="ClasseTudo()">
+            <option value="Alaude">Alaúde</option>
+            <option value="Flauta">Flauta</option>
+            <option value="FlautaPa">Flauta_de_Pã</option>
+            <option value="GaitaFoles">Gaita_de_Foles</option>
+            <option value="Lira">Lira</option>
+            <option value="Oboe">Oboé</option>
+            <option value="Tambor">Tambor</option>
+            <option value="Trombeta">Trombeta</option>
+            <option value="Violino">Violino</option>
+            <option value="Xilofone">Xilofone</option>
+          </select>
+        </td>
+        <td id="EscolhaFerramentasMonge" hidden>
+          <label for="EscolhaMonge">Proficiencia Extra:</label>
+          <select id="EscolhaMonge" onchange="ClasseTudo()">
+            <option value="Alaude">Alaúde</option>
+            <option value="Flauta">Flauta</option>
+            <option value="FlautaPa">Flauta_de_Pã</option>
+            <option value="GaitaFoles">Gaita_de_Foles</option>
+            <option value="Lira">Lira</option>
+            <option value="Oboe">Oboé</option>
+            <option value="Tambor">Tambor</option>
+            <option value="Trombeta">Trombeta</option>
+            <option value="Violino">Violino</option>
+            <option value="Xilofone">Xilofone</option>
+            <option value="FerramentasCarpinteiro">Ferramentas_de_Carpinteiro</option>
+            <option value="FerramentasCartografo">Ferramentas_de_Cartografo</option>
+            <option value="FerramentasCostureiro">Ferramentas_de_Costureiro</option>
+            <option value="FerramentasCoureiro">Ferramentas_de_Coureiro</option>
+            <option value="FerramentasEntalhador">Ferramentas_de_Entalhador</option>
+            <option value="FerramentasFerreiro">Ferramentas_de_Ferreiro</option>
+            <option value="FerramentasFunileiro">Ferramentas_de_Funileiro</option>
+            <option value="FerramentasJoalheiro">Ferramentas_de_Joalheiro</option>
+            <option value="FerramentasOleiro">Ferramentas_de_Oleiro</option>
+            <option value="FerramentasPedreiro">Ferramentas_de_Pedreiro</option>
+            <option value="FerramentasPintor">Ferramentas_de_Pintor</option>
+            <option value="FerramentasSapateiro">Ferramentas_de_Sapateiro</option>
+            <option value="FerramentasVidreiro">Ferramentas_de_Vidreiro</option>
+            <option value="SuprimentosAlquimista">Suprimentos_de_Alquimista</option>
+            <option value="SuprimentosCervejeiro">Suprimentos_de_Cervejeiro</option>
+            <option value="SuprimentosCaligrafia">Suprimentos_de_Caligrafia</option>
+            <option value="UtensíliosCozinheiro">Utensílios_de_Cozinheiro</option>
+          </select>
+        </td>
+        <td id="PericiaClasseBarbaro" hidden onchange="ClasseTudo()">
+          <label for="PericiaBarbaro1">Pericias_do_Barbaro: </label>
+          <select id="PericiaBarbaro1">
+            <option value="LidarAnimais">Lidar_Com_Animais</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Sobrevivencia">Sobrevivência</option>
+          </select>
+          <select id="PericiaBarbaro2">
+            <option value="LidarAnimais">Lidar_Com_Animais</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Sobrevivencia">Sobrevivência</option>
+          </select>
+        </td>
+        <td id="PericiaClasseBardo" hidden onchange="ClasseTudo()">
+          <label for="PericiaBardo1">Pericias_do_Bardo: </label>
+          <select id="PericiaBardo1">
+            <option value="Acrobacia">Acrobacia</option>
+            <option value="Arcanismo">Arcanismo</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Atuaçao">Atuação</option>
+            <option value="Blefar">Blefar</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Historia">História</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="LidarAnimais">Lidar_Com_Animais</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Prestidigitaçao">Prestidigitação</option>
+            <option value="Religiao">Religião</option>
+            <option value="Sobrevivencia">Sobrevivência</option>
+          </select>
+          <select id="PericiaBardo2">
+            <option value="Acrobacia">Acrobacia</option>
+            <option value="Arcanismo">Arcanismo</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Atuaçao">Atuação</option>
+            <option value="Blefar">Blefar</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Historia">História</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="LidarAnimais">Lidar_Com_Animais</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Prestidigitaçao">Prestidigitação</option>
+            <option value="Religiao">Religião</option>
+            <option value="Sobrevivencia">Sobrevivência</option>
+          </select>
+          <select id="PericiaBardo3">
+            <option value="Acrobacia">Acrobacia</option>
+            <option value="Arcanismo">Arcanismo</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Atuaçao">Atuação</option>
+            <option value="Blefar">Blefar</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Historia">História</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="LidarAnimais">Lidar_Com_Animais</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Prestidigitaçao">Prestidigitação</option>
+            <option value="Religiao">Religião</option>
+            <option value="Sobrevivencia">Sobrevivência</option>
+          </select>
+        </td>
+        <td id="PericiaClasseBruxo" hidden onchange="ClasseTudo()">
+          <label for="PericiaBruxo1">Pericias_do_Bruxo: </label>
+          <select id="PericiaBruxo1">
+            <option value="Arcanismo">Arcanismo</option>
+            <option value="Blefar">Blefar</option>
+            <option value="Historia">História</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Religiao">Religião</option>
+          </select>
+          <select id="PericiaBruxo2">
+            <option value="Arcanismo">Arcanismo</option>
+            <option value="Blefar">Blefar</option>
+            <option value="Historia">História</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Religiao">Religião</option>
+          </select>
+        </td>
+        <td id="PericiaClasseClerigo" hidden onchange="ClasseTudo()">
+          <label for="PericiaClerigo1">Pericia_do_Clerigo</label>
+          <select id="PericiaClerigo1">
+            <option value="Historia">História</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Persuasao">Persuasão</option>
+            <option value="Religiao">Religião</option>
+          </select>
+          <select id="PericiaClerigo2">
+            <option value="Historia">História</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Persuasao">Persuasão</option>
+            <option value="Religiao">Religião</option>
+          </select>
+        </td>
+        <td id="PericiaClasseDruida" hidden onchange="ClasseTudo()">
+          <label for="PericiaDruida1">Pericias_do_Druida</label>
+          <select id="PericiaDruida1">
+            <option value="Arcanismo">Arcanismo</option>
+            <option value="LidarAnimais">Lidar_Com_Animais</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Religiao">Religião</option>
+            <option value="Sobrevivencia">Sobrevivência</option>
+          </select>
+          <select id="PericiaDruida2">
+            <option value="Arcanismo">Arcanismo</option>
+            <option value="LidarAnimais">Lidar_Com_Animais</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Religiao">Religião</option>
+            <option value="Sobrevivencia">Sobrevivência</option>
+          </select>
+        </td>
+        <td id="PericiaClasseFeiticeiro" hidden onchange="ClasseTudo()">
+          <label for="PericiaFeiticeiro1">Pericia_do_Feiticeiro</label>
+          <select id="PericiaFeiticeiro1">
+            <option value="Arcanismo">Arcanismo</option>
+            <option value="Blefar">Blefar</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Persuasao">Persuasão</option>
+            <option value="Religiao">Religião</option>
+          </select>
+          <select id="PericiaFeiticeiro2">
+            <option value="Arcanismo">Arcanismo</option>
+            <option value="Blefar">Blefar</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Persuasao">Persuasão</option>
+            <option value="Religiao">Religião</option>
+          </select>
+        </td>
+        <td id="PericiaClasseGuerreiro" hidden onchange="ClasseTudo()">
+          <label for="PericiaGuerreiro1">Pericias_do_Guerreiro</label>
+          <select id="PericiaGuerreiro1">
+            <option value="Acrobacia">Acrobacia</option>
+            <option value="LidarAnimais">Lidar_Com_Animais</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Historia">História</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Sobrevivencia">Sobrevivência</option>
+          </select>
+          <select id="PericiaGuerreiro2">
+            <option value="Acrobacia">Acrobacia</option>
+            <option value="LidarAnimais">Lidar_Com_Animais</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Historia">História</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Sobrevivencia">Sobrevivência</option>
+          </select>
+        </td>
+        <td id="PericiaClasseLadino" hidden onchange="ClasseTudo()">
+          <label for="PericiaLadino1">Pericias_do_Ladino</label>
+          <select id="PericiaLadino1">
+            <option value="Acrobacia">Acrobacia</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Atuaçao">Atuação</option>
+            <option value="Blefar">Blefar</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Persuasao">Persuasão</option>
+            <option value="Prestidigitaçao">Prestidigitação</option>
+          </select>
+          <select id="PericiaLadino2">
+            <option value="Acrobacia">Acrobacia</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Atuaçao">Atuação</option>
+            <option value="Blefar">Blefar</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Persuasao">Persuasão</option>
+            <option value="Prestidigitaçao">Prestidigitação</option>
+          </select>
+          <select id="PericiaLadino3">
+            <option value="Acrobacia">Acrobacia</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Atuaçao">Atuação</option>
+            <option value="Blefar">Blefar</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Persuasao">Persuasão</option>
+            <option value="Prestidigitaçao">Prestidigitação</option>
+          </select>
+          <select id="PericiaLadino4">
+            <option value="Acrobacia">Acrobacia</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Atuaçao">Atuação</option>
+            <option value="Blefar">Blefar</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Persuasao">Persuasão</option>
+            <option value="Prestidigitaçao">Prestidigitação</option>
+          </select>
+        </td>
+        <td id="PericiaClasseMago" hidden onchange="ClasseTudo()">
+          <label for="PericiaMago1">Pericias_do_Mago: </label>
+          <select id="PericiaMago1">
+            <option value="Arcanismo">Arcanismo</option>
+            <option value="Historia">História</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Religiao">Religião</option>
+          </select>
+          <select id="PericiaMago2">
+            <option value="Arcanismo">Arcanismo</option>
+            <option value="Historia">História</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Religiao">Religião</option>
+          </select>
+        </td>
+        <td id="PericiaClasseMonge" hidden onchange="ClasseTudo()">
+          <label for="PericiaMonge1">Pericias_do_Monge: </label>
+          <select id="PericiaMonge1">
+            <option value="Acrobacia">Acrobacia</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Historia">História</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Religiao">Religião</option>
+          </select>
+          <select id="PericiaMonge2">
+            <option value="Acrobacia">Acrobacia</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Historia">História</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Religiao">Religião</option>
+          </select>
+        </td>
+        <td id="PericiaClassePaladino" hidden onchange="ClasseTudo()">
+          <label for="PericiaPaladino1">Pericia_do_Paladino</label>
+          <select id="PericiaPaladino1">
+            <option value="Atletismo">Atletismo</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Persuasao">Persuasão</option>
+            <option value="Religiao">Religião</option>
+          </select>
+          <select id="PericiaPaladino2">
+            <option value="Atletismo">Atletismo</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Intimidaçao">Intimidação</option>
+            <option value="Medicina">Medicina</option>
+            <option value="Persuasao">Persuasão</option>
+            <option value="Religiao">Religião</option>
+          </select>
+        </td>
+        <td id="PericiaClassePatrulheiro" hidden onchange="ClasseTudo()">
+          <label for="PericiaPatrulheiro1">Pericia_do_Patrulheiro: </label>
+          <select id="PericiaPatrulheiro1">
+            <option value="LidarAnimais">Lidar_Com_Animais</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Sobrevivencia">Sobrevivência</option>
+          </select>
+          <select id="PericiaPatrulheiro2">
+            <option value="LidarAnimais">Lidar_Com_Animais</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Sobrevivencia">Sobrevivência</option>
+          </select>
+          <select id="PericiaPatrulheiro3">
+            <option value="LidarAnimais">Lidar_Com_Animais</option>
+            <option value="Atletismo">Atletismo</option>
+            <option value="Furtividade">Furtividade</option>
+            <option value="Intuiçao">Intuição</option>
+            <option value="Investigaçao">Investigação</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Percepçao">Percepção</option>
+            <option value="Sobrevivencia">Sobrevivência</option>
+          </select>
+        </td>
+        <td id="BruxoEscolhaPatrono" hidden>
+          <label for="EscolhaPatronoTranscendental">Escolha_um_Patrono: </label>
+          <select id="EscolhaPatronoTranscendental" onchange="ClasseTudo()">
+            <option value="Arquifada">A_Arquifada</option>
+            <option value="Corruptor">O_Corruptor</option>
+            <option value="GrandeAntigo">O_Grande_Antigo</option>
+          </select>
+        </td>
+        <td id="ClerigoEscolhaDominio" hidden>
+          <label for="EscolhaDominioDivino">Escolha_um_Dominio: </label>
+          <select id="EscolhaDominioDivino" onchange="ClasseTudo()">
+            <option value="Conhecimento">Conhecimento</option>
+            <option value="Enganaçao">Enganação</option>
+            <option value="Guerra">Guerra</option>
+            <option value="Luz">Luz</option>
+            <option value="Natureza">Natureza</option>
+            <option value="Tempestade">Tempestade</option>
+            <option value="Vida">Vida</option>
+          </select>
+        </td>
+        <td id="FeiticeiroEscolhaOrigem" hidden>
+          <label for="EscolhaOrigemMagia">Escolha_uma_origem: </label>
+          <select id="EscolhaOrigemMagia" onchange="ClasseTudo()">
+            <option value="Draconica">Linhagem_Draconica</option>
+            <option value="Selvagem">Magia_Selvagem</option>
+          </select>
+          <select id="EscolhaAncestralDraconico" onchange="ClasseTudo()" hidden>
+            <option selected>Nda</option>
+            <option value="Azul">Azul</option>
+            <option value="Branco">Branco</option>
+            <option value="Bronze">Bronze</option>
+            <option value="Cobre">Cobre</option>
+            <option value="Latao">Latão</option>
+            <option value="Negro">Negro</option>
+            <option value="Ouro">Ouro</option>
+            <option value="Prata">Prata</option>
+            <option value="Verde">Verde</option>
+            <option value="Vermelho">Vermelho</option>
+          </select>
+        </td>
+        <td id="GuerreiroEscolhaEstilo" hidden>
+          <label for="EscolhaEstiloLuta">Escolha_um_Estilo</label>
+          <select id="EscolhaEstiloLuta" onchange="ClasseTudo()">
+            <option value="Arquearia">Arquearia</option>
+            <option value="CombateArmasGrandes">Combate_com_Armas_Grandes</option>
+            <option value="CombateDuasArmas">Combate_com_Duas_Armas</option>
+            <option value="Defesa">Defesa</option>
+            <option value="Duelismo">Duelismo</option>
+            <option value="Proteçao">Proteção</option>
+          </select>
+        </td>
+        <td id="LadinoEscolhaEspecializaçao" hidden>
+          <label for="EscolhaEspecializaçao1">Escolha_Especialização: </label>
+          <select id="EscolhaEspecializaçao1" onchange="ClasseTudo()">
+          </select>
+          <select id="EscolhaEspecializaçao2" onchange="ClasseTudo()">
+          </select>
+        </td>
+        <td id="PatrulheiroEscolhaInimigo" hidden>
+          <label for="EscolhaInimigoFavorito">Escolha_um_Inimigo: </label>
+          <select id="EscolhaInimigoFavorito" onchange="ClasseTudo()">
+            <option value="Bestas">Bestas</option>
+            <option value="Fadas">Fadas</option>
+            <option value="Humanoide">Humanoide</option>
+            <option value="Monstruosidades">Monstruosidades</option>
+            <option value="MortoVivo">Morto-Vivo</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+
+    <table border="1" id="Character">
+      <tr>
+        <td id="EscolhaEquipamentosBarbaro" hidden>
+          <label for="EquipamentoBarbaro1">Equipamentos_do_Barbaro: </label>
+          <select id="EquipamentoBarbaro1" onchange="ClasseTudo()">
+            <option value="MachadoGrande">Machado_Grande</option>
+            <option value="Alabarda">Alabarda</option>
+            <option value="Cimitarra">Cimitarra</option>
+            <option value="Chicote">Chicote</option>
+            <option value="EspadaCurta">Espada_Curta</option>
+            <option value="EspadaGrande">Espada_Grande</option>
+            <option value="EspadaLonga">Espada_Longa</option>
+            <option value="Glaive">Glaive</option>
+            <option value="LançaMontaria">Lança_de_Montaria</option>
+            <option value="LançaLonga">Lança_Longa</option>
+            <option value="MaçaEstrela">Maça_Estrela</option>
+            <option value="MachadoBatalha">Machado_de_Batalha</option>
+            <option value="Malho">Malho</option>
+            <option value="Mangual">Mangual</option>
+            <option value="MarteloGuerra">Martelo_de_Guerra</option>
+            <option value="PicaretaGuerra">Picareta_de_Guerra</option>
+            <option value="Rapieira">Rapieira</option>
+            <option value="Tridente">Tridente</option>
+          </select>
+          <select id="EquipamentoBarbaro2" onchange="ClasseTudo()">
+            <option value="DuasMachadinhas">Duas_Machadinhas</option>
+            <option value="Adaga">Adaga</option>
+            <option value="Azagaia">Azagaia</option>
+            <option value="Bordao">Bordão</option>
+            <option value="ClavaGrande">Clava_Grande</option>
+            <option value="FoiceCurta">FoiceCurta</option>
+            <option value="Lança">Lança</option>
+            <option value="Maça">Maça</option>
+            <option value="MarteloLeve">Martelo_Leve</option>
+            <option value="Porrete">Porrete</option>
+            <option value="ArcoCurto">Arco_Curto</option>
+            <option value="BestaLeve">Besta_Leve</option>
+            <option value="Dardo">Dardo</option>
+            <option value="Funda">Funda</option>
+          </select>
+        </td>
+        <td id="EscolhaEquipamentosBardo" hidden>
+          <label for="EquipamentoBardo1">Equipamentos_do_Bardo: </label>
+          <select id="EquipamentoBardo1" onchange="ClasseTudo()">
+            <option value="Rapieira">Rapieira</option>
+            <option value="EspadaLonga">Espada_Longa</option>
+            <option value="Adaga">Adaga</option>
+            <option value="Azagaia">Azagaia</option>
+            <option value="Bordao">Bordão</option>
+            <option value="ClavaGrande">Clava_Grande</option>
+            <option value="FoiceCurta">FoiceCurta</option>
+            <option value="Lança">Lança</option>
+            <option value="Maça">Maça</option>
+            <option value="MarteloLeve">Martelo_Leve</option>
+            <option value="Porrete">Porrete</option>
+            <option value="ArcoCurto">Arco_Curto</option>
+            <option value="BestaLeve">Besta_Leve</option>
+            <option value="Dardo">Dardo</option>
+            <option value="Funda">Funda</option>
+            <option value="Machadinha">Machadinha</option>
+          </select>
+          <select id="EquipamentoBardo2" onchange="ClasseTudo()">
+            <option value="PacoteDiplomata">Pacote_de_Diplomata</option>
+            <option value="PacoteArtista">Pacote_de_Artista</option>
+          </select>
+          <select id="EquipamentoBardo3" onchange="ClasseTudo()">
+            <option value="Alaude">Alaúde</option>
+            <option value="Flauta">Flauta</option>
+            <option value="FlautaPa">Flauta_de_Pã</option>
+            <option value="GaitaFoles">Gaita_de_Foles</option>
+            <option value="Lira">Lira</option>
+            <option value="Oboe">Oboé</option>
+            <option value="Tambor">Tambor</option>
+            <option value="Trombeta">Trombeta</option>
+            <option value="Violino">Violino</option>
+            <option value="Xilofone">Xilofone</option>
+          </select>
+        </td>
+        <td id="EscolhaEquipamentosBruxo" hidden>
+          <label for="EquipamentoBruxo1">Equipamentos_do_Bruxo</label>
+          <select id="EquipamentoBruxo1" onchange="ClasseTudo()">
+            <option value="Adaga">Adaga</option>
+            <option value="Azagaia">Azagaia</option>
+            <option value="Bordao">Bordão</option>
+            <option value="ClavaGrande">Clava_Grande</option>
+            <option value="FoiceCurta">FoiceCurta</option>
+            <option value="Lança">Lança</option>
+            <option value="Maça">Maça</option>
+            <option value="MarteloLeve">Martelo_Leve</option>
+            <option value="Porrete">Porrete</option>
+            <option value="ArcoCurto">Arco_Curto</option>
+            <option value="BestaLeve">Besta_Leve</option>
+            <option value="Dardo">Dardo</option>
+            <option value="Funda">Funda</option>
+            <option value="Machadinha">Machadinha</option>
+          </select>
+          <select id="EquipamentoBruxo2" onchange="ClasseTudo()">
+            <option value="BolsaComponentes">Bolsa_de_Componentes</option>
+            <option value="FocoArcano">Foco_Arcano</option>
+          </select>
+          <select id="EquipamentoBruxo3" onchange="ClasseTudo()">
+            <option value="PacoteEstudioso">Pacote_de_Estudioso</option>
+            <option value="PacoteExplorador">Pacote_de_Explorador</option>
+          </select>
+          <select id="EquipamentoBruxo4" onchange="ClasseTudo()">
+            <option value="Adaga">Adaga</option>
+            <option value="Azagaia">Azagaia</option>
+            <option value="Bordao">Bordão</option>
+            <option value="ClavaGrande">Clava_Grande</option>
+            <option value="FoiceCurta">FoiceCurta</option>
+            <option value="Lança">Lança</option>
+            <option value="Maça">Maça</option>
+            <option value="MarteloLeve">Martelo_Leve</option>
+            <option value="Porrete">Porrete</option>
+            <option value="ArcoCurto">Arco_Curto</option>
+            <option value="BestaLeve">Besta_Leve</option>
+            <option value="Dardo">Dardo</option>
+            <option value="Funda">Funda</option>
+            <option value="Machadinha">Machadinha</option>
+          </select>
+        </td>
+        <td id="EscolhaEquipamentosClerigo" hidden>
+          <label for="EquipamentoClerigo1">Equipamentos_do_Clerigo</label>
+          <select id="EquipamentoClerigo1" onchange="ClasseTudo()">
+            <option value="Maça">Maça</option>
+            <option value="MarteloGuerra">Martelo_de_Guerra</option>
+          </select>
+          <select id="EquipamentoClerigo2" onchange="ClasseTudo()">
+            <option value="Brunea">Brunea</option>
+            <option value="ArmaduraCouro">Armadura_de_Couro</option>
+            <option value="CotaMalha">Cota_de_Malha</option>
+          </select>
+          <select id="EquipamentoClerigo3" onchange="ClasseTudo()">
+            <option value="Adaga">Adaga</option>
+            <option value="Azagaia">Azagaia</option>
+            <option value="Bordao">Bordão</option>
+            <option value="ClavaGrande">Clava_Grande</option>
+            <option value="FoiceCurta">FoiceCurta</option>
+            <option value="Lança">Lança</option>
+            <option value="Maça">Maça</option>
+            <option value="MarteloLeve">Martelo_Leve</option>
+            <option value="Porrete">Porrete</option>
+            <option value="ArcoCurto">Arco_Curto</option>
+            <option value="BestaLeve">Besta_Leve</option>
+            <option value="Dardo">Dardo</option>
+            <option value="Funda">Funda</option>
+            <option value="Machadinha">Machadinha</option>
+          </select>
+          <select id="EquipamentoClerigo4" onchange="ClasseTudo()">
+            <option value="PacoteSacerdote">Pacote_de_Sacerdote</option>
+            <option value="PacoteAventureiro">Pacote_de_Aventureiro</option>
+          </select>
+        </td>
+        <td id="EscolhaEquipamentosDruida" hidden>
+          <label for="EquipamentoDruida1">Equipamentos_do_Druida</label>
+          <select id="EquipamentoDruida1" onchange="ClasseTudo()">
+            <option value="EscudoMadeira">Escudo_de_Madeira</option>
+            <option value="Adaga">Adaga</option>
+            <option value="Azagaia">Azagaia</option>
+            <option value="Bordao">Bordão</option>
+            <option value="ClavaGrande">Clava_Grande</option>
+            <option value="FoiceCurta">FoiceCurta</option>
+            <option value="Lança">Lança</option>
+            <option value="Maça">Maça</option>
+            <option value="MarteloLeve">Martelo_Leve</option>
+            <option value="Porrete">Porrete</option>
+            <option value="ArcoCurto">Arco_Curto</option>
+            <option value="BestaLeve">Besta_Leve</option>
+            <option value="Dardo">Dardo</option>
+            <option value="Funda">Funda</option>
+            <option value="Machadinha">Machadinha</option>
+          </select>
+          <select id="EquipamentoDruida2" onchange="ClasseTudo()">
+            <option value="Cimitarra">Cimitarra</option>
+            <option value="Adaga">Adaga</option>
+            <option value="Azagaia">Azagaia</option>
+            <option value="Bordao">Bordão</option>
+            <option value="ClavaGrande">Clava_Grande</option>
+            <option value="FoiceCurta">FoiceCurta</option>
+            <option value="Lança">Lança</option>
+            <option value="Maça">Maça</option>
+            <option value="MarteloLeve">Martelo_Leve</option>
+            <option value="Porrete">Porrete</option>
+            <option value="Machadinha">Machadinha</option>
+          </select>
+          <select id="EquipamentoDruida3" onchange="ClasseTudo()">
+            <option value="PacoteEstudioso">Pacote_de_Estudioso</option>
+            <option value="PacoteExplorador">Pacote_de_Explorador</option>
+          </select>
+        </td>
+        <td id="EscolhaEquipamentosFeiticeiro" hidden>
+          <label for="EquipamentoFeiticeiro1">Equipamentos_do_Feiticeiro</label>
+          <select id="EquipamentoFeiticeiro1" onchange="ClasseTudo()">
+            <option value="Adaga">Adaga</option>
+            <option value="Azagaia">Azagaia</option>
+            <option value="Bordao">Bordão</option>
+            <option value="ClavaGrande">Clava_Grande</option>
+            <option value="FoiceCurta">FoiceCurta</option>
+            <option value="Lança">Lança</option>
+            <option value="Maça">Maça</option>
+            <option value="MarteloLeve">Martelo_Leve</option>
+            <option value="Porrete">Porrete</option>
+            <option value="ArcoCurto">Arco_Curto</option>
+            <option value="BestaLeve">Besta_Leve</option>
+            <option value="Dardo">Dardo</option>
+            <option value="Funda">Funda</option>
+            <option value="Machadinha">Machadinha</option>
+          </select>
+          <select id="EquipamentoFeiticeiro2" onchange="ClasseTudo()">
+            <option value="BolsaComponentes">Bolsa_de_Componentes</option>
+            <option value="FocoArcano">Foco_Arcano</option>
+          </select>
+          <select id="EquipamentoFeiticeiro3" onchange="ClasseTudo()">
+            <option value="PacoteExplorador">Pacote_de_Explorador</option>
+            <option value="PacoteAventureiro">Pacote_de_Aventureiro</option>
+          </select>
+        </td>
+        <td id="EscolhaEquipamentosGuerreiro" hidden>
+          <label for="EquipamentoGuerreiro1">Equipamentos_do_Guerreiro</label>
+          <select id="EquipamentoGuerreiro1" onchange="ClasseTudo()">
+            <option value="CotaMalha">Cota_de_Malha</option>
+            <option value="GibaoPeleEArcoLongo">Gibão_de_Pele+Arco_Longo</option>
+          </select>
+          <select id="EquipamentoGuerreiro2" onchange="ClasseTudo()">
+            <option value="MachadoGrande">Machado_Grande</option>
+            <option value="Alabarda">Alabarda</option>
+            <option value="Cimitarra">Cimitarra</option>
+            <option value="Chicote">Chicote</option>
+            <option value="EspadaCurta">Espada_Curta</option>
+            <option value="EspadaGrande">Espada_Grande</option>
+            <option value="EspadaLonga">Espada_Longa</option>
+            <option value="Glaive">Glaive</option>
+            <option value="LançaMontaria">Lança_de_Montaria</option>
+            <option value="LançaLonga">Lança_Longa</option>
+            <option value="MaçaEstrela">Maça_Estrela</option>
+            <option value="MachadoBatalha">Machado_de_Batalha</option>
+            <option value="Malho">Malho</option>
+            <option value="Mangual">Mangual</option>
+            <option value="MarteloGuerra">Martelo_de_Guerra</option>
+            <option value="PicaretaGuerra">Picareta_de_Guerra</option>
+            <option value="Rapieira">Rapieira</option>
+            <option value="Tridente">Tridente</option>
+            <option value="Escudo">Escudo</option>
+          </select>
+          <select id="EquipamentoGuerreiro3" onchange="ClasseTudo()">
+            <option value="MachadoGrande">Machado_Grande</option>
+            <option value="Alabarda">Alabarda</option>
+            <option value="Cimitarra">Cimitarra</option>
+            <option value="Chicote">Chicote</option>
+            <option value="EspadaCurta">Espada_Curta</option>
+            <option value="EspadaGrande">Espada_Grande</option>
+            <option value="EspadaLonga">Espada_Longa</option>
+            <option value="Glaive">Glaive</option>
+            <option value="LançaMontaria">Lança_de_Montaria</option>
+            <option value="LançaLonga">Lança_Longa</option>
+            <option value="MaçaEstrela">Maça_Estrela</option>
+            <option value="MachadoBatalha">Machado_de_Batalha</option>
+            <option value="Malho">Malho</option>
+            <option value="Mangual">Mangual</option>
+            <option value="MarteloGuerra">Martelo_de_Guerra</option>
+            <option value="PicaretaGuerra">Picareta_de_Guerra</option>
+            <option value="Rapieira">Rapieira</option>
+            <option value="Tridente">Tridente</option>
+            <option value="Escudo">Escudo</option>
+          </select>
+          <select id="EquipamentoGuerreiro4" onchange="ClasseTudo()">
+            <option value="BestaLeve">Besta_Leve</option>
+            <option value="MachadosArremesso">Dois_Machados_de_Arremesso</option>
+          </select>
+          <select id="EquipamentoGuerreiro5" onchange="ClasseTudo()">
+            <option value="PacoteAventureiro">Pacote_de_Aventureiro</option>
+            <option value="PacoteExplorador">Pacote_de_Explorador</option>
+          </select>
+        </td>
+        <td id="EscolhaEquipamentosLadino" hidden>
+          <label for="EquipamentoLadino1">Equipamentos_do_Ladino</label>
+          <select id="EquipamentoLadino1" onchange="ClasseTudo()">
+            <option value="Rapieira">Rapieira</option>
+            <option value="EspadaLonga">Espada_Longa</option>
+          </select>
+          <select id="EquipamentoLadino2" onchange="ClasseTudo()">
+            <option value="ArcoCurto">Arco_Curto</option>
+            <option value="EspadaCurta">Espada_Curta</option>
+          </select>
+          <select id="EquipamentoLadino3" onchange="ClasseTudo()">
+            <option value="PacoteAssaltante">Pacote_de_Assaltante</option>
+            <option value=PacoteAventureiro"">Pacote_de_Aventureiro</option>
+            <option value="PacoteExplorador">Pacote_de_Explorador</option>
+          </select>
+        </td>
+        <td id="EscolhaEquipamentosMago" hidden>
+          <label for="EquipamentoMago1">Equipamentos_do_Mago</label>
+          <select id="EquipamentoMago1" onchange="ClasseTudo()">
+            <option value="Bordao">Bordão</option>
+            <option value="Adaga">Adaga</option>
+          </select>
+          <select id="EquipamentoMago2" onchange="ClasseTudo()">
+            <option value="BolsaComponentes">Bolsa_de_Componentes</option>
+            <option value="FocoArcano">Foco_Arcano</option>
+          </select>
+          <select id="EquipamentoMago3" onchange="ClasseTudo()">
+            <option value="PacoteEstudioso">Pacote_de_Estudioso</option>
+            <option value="PacoteExplorador">Pacote_de_Explorador</option>
+          </select>
+        </td>
+        <td id="EscolhaEquipamentosMonge" hidden>
+          <label for="EquipamentoMonge1">Equipamentos_do_Monge</label>
+          <select id="EquipamentoMonge1" onchange="ClasseTudo()">
+            <option value="EspadaCurta">Espada_Curta</option>
+            <option value="Adaga">Adaga</option>
+            <option value="Azagaia">Azagaia</option>
+            <option value="Bordao">Bordão</option>
+            <option value="ClavaGrande">Clava_Grande</option>
+            <option value="FoiceCurta">FoiceCurta</option>
+            <option value="Lança">Lança</option>
+            <option value="Maça">Maça</option>
+            <option value="MarteloLeve">Martelo_Leve</option>
+            <option value="Porrete">Porrete</option>
+            <option value="ArcoCurto">Arco_Curto</option>
+            <option value="BestaLeve">Besta_Leve</option>
+            <option value="Dardo">Dardo</option>
+            <option value="Funda">Funda</option>
+            <option value="Machadinha">Machadinha</option>
+          </select>
+          <select id="EquipamentoMonge2" onchange="ClasseTudo()">
+            <option value="PacoteExplorador">Pacote_de_Explorador</option>
+            <option value="PacoteAventureiro">Pacote_de_Aventureiro</option>
+          </select>
+        </td>
+        <td id="EscolhaEquipamentosPaladino" hidden>
+          <label for="EquipamentoPaladino1">Equipamentos_do_Paladino</label>
+          <select id="EquipamentoPaladino1" onchange="ClasseTudo()">
+            <option value="MachadoGrande">Machado_Grande</option>
+            <option value="Alabarda">Alabarda</option>
+            <option value="Cimitarra">Cimitarra</option>
+            <option value="Chicote">Chicote</option>
+            <option value="EspadaCurta">Espada_Curta</option>
+            <option value="EspadaGrande">Espada_Grande</option>
+            <option value="EspadaLonga">Espada_Longa</option>
+            <option value="Glaive">Glaive</option>
+            <option value="LançaMontaria">Lança_de_Montaria</option>
+            <option value="LançaLonga">Lança_Longa</option>
+            <option value="MaçaEstrela">Maça_Estrela</option>
+            <option value="MachadoBatalha">Machado_de_Batalha</option>
+            <option value="Malho">Malho</option>
+            <option value="Mangual">Mangual</option>
+            <option value="MarteloGuerra">Martelo_de_Guerra</option>
+            <option value="PicaretaGuerra">Picareta_de_Guerra</option>
+            <option value="Rapieira">Rapieira</option>
+            <option value="Tridente">Tridente</option>
+            <option value="Escudo">Escudo</option>
+          </select>
+          <select id="EquipamentoPaladino2" onchange="ClasseTudo()">
+            <option value="MachadoGrande">Machado_Grande</option>
+            <option value="Alabarda">Alabarda</option>
+            <option value="Cimitarra">Cimitarra</option>
+            <option value="Chicote">Chicote</option>
+            <option value="EspadaCurta">Espada_Curta</option>
+            <option value="EspadaGrande">Espada_Grande</option>
+            <option value="EspadaLonga">Espada_Longa</option>
+            <option value="Glaive">Glaive</option>
+            <option value="LançaMontaria">Lança_de_Montaria</option>
+            <option value="LançaLonga">Lança_Longa</option>
+            <option value="MaçaEstrela">Maça_Estrela</option>
+            <option value="MachadoBatalha">Machado_de_Batalha</option>
+            <option value="Malho">Malho</option>
+            <option value="Mangual">Mangual</option>
+            <option value="MarteloGuerra">Martelo_de_Guerra</option>
+            <option value="PicaretaGuerra">Picareta_de_Guerra</option>
+            <option value="Rapieira">Rapieira</option>
+            <option value="Tridente">Tridente</option>
+            <option value="Escudo">Escudo</option>
+          </select>
+          <select id="EquipamentoPaladino3" onchange="ClasseTudo()">
+            <option value="CincoAzagaias">Cinco_Azagaias</option>
+            <option value="Adaga">Adaga</option>
+            <option value="Azagaia">Azagaia</option>
+            <option value="Bordao">Bordão</option>
+            <option value="ClavaGrande">Clava_Grande</option>
+            <option value="FoiceCurta">FoiceCurta</option>
+            <option value="Lança">Lança</option>
+            <option value="Maça">Maça</option>
+            <option value="MarteloLeve">Martelo_Leve</option>
+            <option value="Porrete">Porrete</option>
+            <option value="Machadinha">Machadinha</option>
+          </select>
+          <select id="EquipamentoPaladino4" onchange="ClasseTudo()">
+            <option value="PacoteSacerdote">Pacote_de_Sacerdote</option>
+            <option value="PacoteAventureiro">Pacote_de_Aventureiro</option>
+          </select>
+          <td id="EscolhaEquipamentosPatrulheiro" hidden>
+            <label for="EquipamentoPatrulheiro1">Equipamentos_do_Patrulheiro</label>
+            <select id="EquipamentoPatrulheiro1" onchange="ClasseTudo()">
+              <option value="Brunea">Brunea</option>
+              <option value="ArmaduraCouro">Armadura_de_Couro</option>
+            </select>
+            <select id="EquipamentoPatrulheiro2" onchange="ClasseTudo()">
+              <option value="EspadaCurta">Espada_Curta</option>
+              <option value="Adaga">Adaga</option>
+              <option value="Azagaia">Azagaia</option>
+              <option value="Bordao">Bordão</option>
+              <option value="ClavaGrande">Clava_Grande</option>
+              <option value="FoiceCurta">FoiceCurta</option>
+              <option value="Lança">Lança</option>
+              <option value="Maça">Maça</option>
+              <option value="MarteloLeve">Martelo_Leve</option>
+              <option value="Porrete">Porrete</option>
+              <option value="Machadinha">Machadinha</option>
+            </select>
+            <select id="EquipamentoPatrulheiro3" onchange="ClasseTudo()">
+              <option value="EspadaCurta">Espada_Curta</option>
+              <option value="Adaga">Adaga</option>
+              <option value="Azagaia">Azagaia</option>
+              <option value="Bordao">Bordão</option>
+              <option value="ClavaGrande">Clava_Grande</option>
+              <option value="FoiceCurta">FoiceCurta</option>
+              <option value="Lança">Lança</option>
+              <option value="Maça">Maça</option>
+              <option value="MarteloLeve">Martelo_Leve</option>
+              <option value="Porrete">Porrete</option>
+              <option value="Machadinha">Machadinha</option>
+            </select>
+          </td>
+        </td>
+      </tr>
+
+    </table>
+
+    <table border="1">
+      <tr>
+        <th>Proficiencias</th>
+      </tr>
+      <tr>
+        <td id="ConteudoTabelaProficiencias" >
+          <textarea readonly id="Prof" rows="6" cols="35"></textarea>
+        </td>
+      </tr>
+    </table>
+
+    <table border="1">
+      <tr>
+        <th>Caracteristicas <br> Habilidades </th>
+      </tr>
+      <tr id="ConteudoTabelaCaracteristicas" >
+        <td>
+          <textarea readonly id="Caracter" rows="6" cols="35"></textarea>
+        </td>
+      </tr>
+    </table>
+
+    <table border="1">
+      <tr>
+        <th>Idiomas</th>
+      </tr>
+      <tr id="ConteudoTabelaIdiomas" >
+        <td>
+          <textarea readonly id="Lingua" rows="2" cols="35"></textarea>
+        </td>
+      </tr>
+    </table>
+
+    <table border="1">
+      <tr>
+        <th>Equipamentos</th>
+      </tr>
+      <tr id="ConteudoTabelaEquipamentos" >
+        <td>
+          <textarea readonly id="Equipamentos" rows="6" cols="35"></textarea>
+        </td>
+      </tr>
+    </table>
+
+    <div class="TabelasCheck">
+
+      <table id="TabelaAtributos" border="1" align="right">
+        <tr>
+          <th>Atibutos</th>
+        </tr>
+        <tr id="Vermelho">
+          <td>
+            <button type="button" onclick="DiminuirFor()">-</button>
+            <button type="button" onclick="AumentarFor()">+</button>
+            <span id="For">Força: 8</span>
+          </td>
+        </tr>
+        <tr id="Vermelho">
+          <td>
+            <span id="ModFor">ModForça: -1</span>
+          </td>
+        </tr>
+        <tr id="Verde">
+          <td>
+            <button type="button" onclick="DiminuirDes()">-</button>
+            <button type="button" onclick="AumentarDes()">+</button>
+            <span id="Des">Destreza: 8</span>
+          </td>
+        </tr>
+        <tr id="Verde">
+          <td>
+            <span id="ModDes">ModDestreza: -1</span>
+          </td>
+        </tr>
+        <tr id="Marrom">
+          <td>
+            <button type="button" onclick="DiminuirCons()">-</button>
+            <button type="button" onclick="AumentarCons()">+</button>
+            <span id="Cons">Constituição: 8</span>
+          </td>
+        </tr>
+        <tr>
+          <td id="Marrom">
+            <span id="ModCons">ModConstituição: -1</span>
+          </td>
+        </tr>
+        <tr id="Azul">
+          <td>
+            <button type="button" onclick="DiminuirInt()">-</button>
+            <button type="button" onclick="AumentarInt()">+</button>
+            <span id="Int">Inteligência: 8</span>
+          </td>
+        </tr>
+        <tr id="Azul">
+          <td>
+            <span id="ModInt">ModInteligência: -1</span>
+          </td>
+        </tr>
+        <tr id="Violeta">
+          <td>
+            <button type="button" onclick="DiminuirSab()">-</button>
+            <button type="button" onclick="AumentarSab()">+</button>
+            <span id="Sab">Sabedoria: 8</span>
+          </td>
+        </tr>
+        <tr id="Violeta">
+          <td>
+            <span id="ModSab">ModSabedoria: -1</span>
+          </td>
+        </tr>
+        <tr id="Amarelo">
+          <td>
+            <button type="button" onclick="DiminuirCar()">-</button>
+            <button type="button" onclick="AumentarCar()">+</button>
+            <span id="Car">Carisma: 8</span>
+          </td>
+        </tr>
+        <tr id="Amarelo">
+          <td>
+            <span id="ModCar">ModCarisma: -1</span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <span id="Extra">Pontos livres: 24</span>
+          </td>
+        </tr>
+      </table>
+
+      <table id="TabelaResistencia" border="1">
+        <tr>
+          <th>Teste <br> Resistência </th>
+        </tr>
+        <tr id="Vermelho">
+          <td>
+            <input disabled name="ASD" onclick="ModAtributo()" type="checkbox" id="ResFor">
+            <label id="ResForNum" for="ResFor">-1 Força</label>
+          </td>
+        </tr>
+        <tr id="Verde">
+          <td>
+            <input disabled name="ASD" onclick="ModAtributo()" type="checkbox" id="ResDes">
+            <label id="ResDesNum" for="ResDes">-1 Destreza</label>
+          </td>
+        </tr>
+        <tr id="Marrom">
+          <td>
+            <input disabled name="ASD" onclick="ModAtributo()" type="checkbox" id="ResCons">
+            <label id="ResConsNum" for="ResCons">-1 Constituição</label>
+          </td>
+        </tr>
+        <tr id="Azul">
+          <td>
+            <input disabled name="ASD" onclick="ModAtributo()" type="checkbox" id="ResInt">
+            <label id="ResIntNum" for="ResInt">-1 Inteligência</label>
+          </td>
+        </tr>
+        <tr id="Violeta">
+          <td>
+            <input disabled name="ASD" onclick="ModAtributo()" type="checkbox" id="ResSab">
+            <label id="ResSabNum" for="ResSab">-1 Sabedoria</label>
+          </td>
+        </tr>
+        <tr id="Amarelo">
+          <td>
+            <input disabled name="ASD" onclick="ModAtributo()" type="checkbox" id="ResCar">
+            <label id="ResCarNum" for="ResCar">-1 Carisma</label>
+          </td>
+        </tr>
+      </table>
+
+      <table id="TabelaPericias" border="1">
+        <tr>
+          <th>Perícias</th>
+        </tr>
+        <tr id="Verde">
+          <td>
+            <input disabled type="checkbox" id="Acrobacia">
+            <label id="AcrobaciaNum" for="Acrobacia">-1 Acrobacia <i>(Des)</i></label>
+          </td>
+        </tr>
+        <tr id="Azul">
+          <td>
+            <input disabled type="checkbox" id="Arcanismo">
+            <label id="ArcanismoNum" for="Arcanismo">-1 Arcanismo <i>(Int)</i></label>
+          </td>
+        </tr>
+        <tr id="Vermelho">
+          <td>
+            <input name="ASD" disabled type="checkbox" id="Atletismo">
+            <label id="AtletismoNum" for="Atletismo">-1 Atletismo <i>(For)</i></label>
+          </td>
+        </tr>
+        <tr id="Amarelo">
+          <td>
+            <input disabled type="checkbox" id="Atuaçao">
+            <label id="AtuaçaoNum" for="Atuaçao">-1 Atuação <i>(Car)</i></label>
+          </td>
+        </tr>
+        <tr id="Amarelo">
+          <td>
+            <input disabled type="checkbox" id="Blefar">
+            <label id="BlefarNum" for="Blefar">-1 Blefar <i>(Car)</i></label>
+          </td>
+        </tr>
+        <tr id="Verde">
+          <td>
+            <input disabled type="checkbox" id="Furtividade">
+            <label id="FurtividadeNum" for="Furtividade">-1 Furtividade <i>(Des)</i></label>
+          </td>
+        </tr>
+        <tr id="Azul">
+          <td>
+            <input disabled type="checkbox" id="Historia">
+            <label id="HistoriaNum" for="Historia">-1 História <i>(Int)</i></label>
+          </td>
+        </tr>
+        <tr id="Amarelo">
+          <td>
+            <input disabled type="checkbox" id="Intimidaçao">
+            <label id="IntimidaçaoNum" for="Intimidaçao">-1 Intimidação <i>(Car)</i></label>
+          </td>
+        </tr>
+        <tr id="Violeta">
+          <td>
+            <input disabled type="checkbox" id="Intuiçao">
+            <label id="IntuiçaoNum" for="Intuiçao">-1 Intuição <i>(Sab)</i></label>
+          </td>
+        </tr>
+        <tr id="Azul">
+          <td>
+            <input disabled type="checkbox" id="Investigaçao">
+            <label id="InvestigaçaoNum" for="Investigaçao">-1 Investigação <i>(Int)</i></label>
+          </td>
+        </tr>
+        <tr id="Violeta">
+          <td>
+            <input disabled type="checkbox" id="LidarAnimais">
+            <label id="LidarAnimaisNum" for="LidarAnimais">-1 Lidar_Com_Animais <i>(Sab)</i></label>
+          </td>
+        </tr>
+        <tr id="Violeta">
+          <td>
+            <input disabled type="checkbox" id="Medicina">
+            <label id="MedicinaNum" for="Medicina">-1 Medicina <i>(Sab)</i></label>
+          </td>
+        </tr>
+        <tr id="Azul">
+          <td>
+            <input disabled type="checkbox" id="Natureza">
+            <label id="NaturezaNum" for="Natureza">-1 Natureza <i>(Int)</i></label>
+          </td>
+        </tr>
+        <tr id="Violeta">
+          <td>
+            <input disabled type="checkbox" id="Percepçao">
+            <label id="PercepçaoNum" for="Percepçao">-1 Percepção <i>(Sab)</i></label>
+          </td>
+        </tr>
+        <tr id="Amarelo">
+          <td>
+            <input disabled type="checkbox" id="Persuasao">
+            <label id="PersuasaoNum" for="Persuasao">-1 Persuasão <i>(Car)</i></label>
+          </td>
+        </tr>
+        <tr id="Verde">
+          <td>
+            <input disabled type="checkbox" id="Prestidigitaçao">
+            <label id="PrestidigitaçaoNum" for="Prestidigitaçao">-1 Prestidigitação <i>(Des)</i></label>
+          </td>
+        </tr>
+        <tr id="Azul">
+          <td>
+            <input disabled type="checkbox" id="Religiao">
+            <label id="ReligiaoNum" for="Religiao">-1 Religião <i>(Int)</i></label>
+          </td>
+        </tr>
+        <tr id="Violeta">
+          <td>
+            <input disabled type="checkbox" id="Sobrevivencia">
+            <label id="SobrevivenciaNum" for="Sobrevivencia">-1 Sobrevivência <i>(Sab)</i></label>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
