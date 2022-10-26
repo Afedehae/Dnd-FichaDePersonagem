@@ -9,48 +9,23 @@
   <body>
     <table id="Character" border="1">
       <tr>
-          <td>
-            <label for="">Nome: </label>
-            <input type="text" placeholder="Digite aqui">
-          </td>
         <td>
           <label for="Raça">Raça: </label>
-          <select onchange="RaçaTudo()" id="Raça">
-            <option selected>Nda</option>
-            <option value="Anao">Anão</option>
-            <option value="Elfo">Elfo</option>
-            <option value="Halfling">Halfling</option>
-            <option value="Humano">Humano</option>
-            <option value="Draconato">Draconato</option>
-            <option value="Gnomo">Gnomo</option>
-            <option value="MeioElfo">Meio-Elfo</option>
-            <option value="MeioOrc">Meio-Orc</option>
-            <option value="Tiefling">Tiefling</option>
-          </select>
-        </td>
-        <td id="SubRaçaAnao" hidden>
-          <label for="SubAnao">SubRaça: </label>
-          <select onchange="RaçaTudo()" id="SubAnao">
-            <option selected>Nda</option>
+          <select onchange="RaçaMudanca()" id="Raça">
             <option value="AnaoColina">Anão_da_Colina</option>
             <option value="AnaoMontanha">Anão_da_Montanha</option>
-          </select>
-        </td>
-        <td id="SubRaçaElfo" hidden>
-          <label for="SubElfo">SubRaça: </label>
-          <select onchange="RaçaTudo()" id="SubElfo">
-            <option selected>Nda</option>
             <option value="AltoElfo">Alto_Elfo</option>
             <option value="ElfoFloresta">Elfo_da_Floresta</option>
             <option value="ElfoNegro">Elfo_Negro(Drow)</option>
-          </select>
-        </td>
-        <td id="SubRaçaHalfling" hidden>
-          <label for="SubHalfling">SubRaça: </label>
-          <select onchange="RaçaTudo()" id="SubHalfling">
-            <option selected>Nda</option>
-            <option value="HalflingPesLeves">Pés_Leves</option>
-            <option value="HalflingRobusto">Robusto</option>
+            <option value="HalflingPesLeves">Halfling_Pés_Leves</option>
+            <option value="HalflingRobusto">Halfling_Robusto</option>
+            <option value="Humano">Humano</option>
+            <option value="Draconato">Draconato</option>
+            <option value="GnomoFloresta">Gnomo_da_Floresta</option>
+            <option value="GnomoRocha">Gnomo_das_Rochas</option>
+            <option value="MeioElfo">Meio-Elfo</option>
+            <option value="MeioOrc">Meio-Orc</option>
+            <option value="Tiefling">Tiefling</option>
           </select>
         </td>
         <td id="AncestralidadeDraconica" hidden>
@@ -67,14 +42,6 @@
             <option value="DracoPrata">Prata</option>
             <option value="DracoVerde">Verde</option>
             <option value="DracoVermelho">Vermelho</option>
-          </select>
-        </td>
-        <td id="SubRaçaGnomo" hidden>
-          <label for="SubGnomo">SubRaça: </label>
-          <select onchange="RaçaTudo()" id="SubGnomo">
-            <option selected>Nda</option>
-            <option value="GnomoFloresta">Gnomo_da_Floresta</option>
-            <option value="GnomoRocha">Gnomo_das_Rochas</option>
           </select>
         </td>
         <td>
@@ -121,7 +88,7 @@
       <tr>
         <td id="IdiomaExtra" hidden>
           <label for="ExtraIdioma">Idioma_Extra: </label>
-          <select id="ExtraIdioma" onchange="ClasseTudo()">
+          <select id="ExtraIdioma" onchange="RaçaMudanca()">
             <option value="Anao">Anão</option>
             <option value="Comum">Comum</option>
             <option value="Elfico">Élfico</option>
@@ -142,7 +109,7 @@
         </td>
         <td id="EscolhaFerramentasAnao" hidden>
           <label for="FerramentasAnao">Ferramenta_de_artesão: </label>
-          <select id="FerramentasAnao" onchange="ClasseTudo()">
+          <select id="FerramentasAnao" onchange="RaçaMudanca()">
             <option value="FerramentasFerreiro">Ferramentas_de_Ferreiro</option>
             <option value="SuprimentosCervejeiro">Suprimentos_de_Cervejeiro</option>
             <option value="FerramentasPedreiro">Ferramentas_de_Pedreiro</option>
@@ -1136,14 +1103,14 @@
 
     <div class="TabelasCheck">
 
-      <table id="TabelaAtributos" border="1" align="right">
+      <table id="TabelaAtributos" border="1" align="right" onclick="DistribuirPontosAtributos()">
         <tr>
           <th>Atibutos</th>
         </tr>
         <tr id="Vermelho">
           <td>
-            <button type="button" onclick="DiminuirFor()">-</button>
-            <button type="button" onclick="AumentarFor()">+</button>
+            <button id="MenosForça" type="button" class="BotaoAtributo">-</button>
+            <button id="MaisForça" type="button" class="BotaoAtributo">+</button>
             <span id="For">Força: 8</span>
           </td>
         </tr>
@@ -1154,8 +1121,8 @@
         </tr>
         <tr id="Verde">
           <td>
-            <button type="button" onclick="DiminuirDes()">-</button>
-            <button type="button" onclick="AumentarDes()">+</button>
+            <button id="MenosDestreza" type="button" class="BotaoAtributo">-</button>
+            <button id="MaisDestreza" type="button" class="BotaoAtributo">+</button>
             <span id="Des">Destreza: 8</span>
           </td>
         </tr>
@@ -1166,8 +1133,8 @@
         </tr>
         <tr id="Marrom">
           <td>
-            <button type="button" onclick="DiminuirCons()">-</button>
-            <button type="button" onclick="AumentarCons()">+</button>
+            <button id="MenosConstituiçao" type="button" class="BotaoAtributo">-</button>
+            <button id="MaisConstituiçao" type="button" class="BotaoAtributo">+</button>
             <span id="Cons">Constituição: 8</span>
           </td>
         </tr>
@@ -1178,8 +1145,8 @@
         </tr>
         <tr id="Azul">
           <td>
-            <button type="button" onclick="DiminuirInt()">-</button>
-            <button type="button" onclick="AumentarInt()">+</button>
+            <button id="MenosInteligencia" type="button" class="BotaoAtributo">-</button>
+            <button id="MaisInteligencia" type="button" class="BotaoAtributo">+</button>
             <span id="Int">Inteligência: 8</span>
           </td>
         </tr>
@@ -1190,8 +1157,8 @@
         </tr>
         <tr id="Violeta">
           <td>
-            <button type="button" onclick="DiminuirSab()">-</button>
-            <button type="button" onclick="AumentarSab()">+</button>
+            <button id="MenosSabedoria" type="button" class="BotaoAtributo">-</button>
+            <button id="MaisSabedoria" type="button" class="BotaoAtributo">+</button>
             <span id="Sab">Sabedoria: 8</span>
           </td>
         </tr>
@@ -1202,8 +1169,8 @@
         </tr>
         <tr id="Amarelo">
           <td>
-            <button type="button" onclick="DiminuirCar()">-</button>
-            <button type="button" onclick="AumentarCar()">+</button>
+            <button id="MenosCarisma" type="button" class="BotaoAtributo">-</button>
+            <button id="MaisCarisma" type="button" class="BotaoAtributo">+</button>
             <span id="Car">Carisma: 8</span>
           </td>
         </tr>
@@ -1219,43 +1186,43 @@
         </tr>
       </table>
 
-      <table id="TabelaResistencia" border="1">
+      <table id="TabelaResistencia" border="1" onclick="LimitarTesteResistencia">
         <tr>
           <th>Teste <br> Resistência </th>
         </tr>
         <tr id="Vermelho">
           <td>
-            <input disabled name="ASD" onclick="ModAtributo()" type="checkbox" id="ResFor">
+            <input disabled name="ASD" type="checkbox" id="ResFor">
             <label id="ResForNum" for="ResFor">-1 Força</label>
           </td>
         </tr>
         <tr id="Verde">
           <td>
-            <input disabled name="ASD" onclick="ModAtributo()" type="checkbox" id="ResDes">
+            <input disabled name="ASD" type="checkbox" id="ResDes">
             <label id="ResDesNum" for="ResDes">-1 Destreza</label>
           </td>
         </tr>
         <tr id="Marrom">
           <td>
-            <input disabled name="ASD" onclick="ModAtributo()" type="checkbox" id="ResCons">
+            <input disabled name="ASD" type="checkbox" id="ResCons">
             <label id="ResConsNum" for="ResCons">-1 Constituição</label>
           </td>
         </tr>
         <tr id="Azul">
           <td>
-            <input disabled name="ASD" onclick="ModAtributo()" type="checkbox" id="ResInt">
+            <input disabled name="ASD" type="checkbox" id="ResInt">
             <label id="ResIntNum" for="ResInt">-1 Inteligência</label>
           </td>
         </tr>
         <tr id="Violeta">
           <td>
-            <input disabled name="ASD" onclick="ModAtributo()" type="checkbox" id="ResSab">
+            <input disabled name="ASD" type="checkbox" id="ResSab">
             <label id="ResSabNum" for="ResSab">-1 Sabedoria</label>
           </td>
         </tr>
         <tr id="Amarelo">
           <td>
-            <input disabled name="ASD" onclick="ModAtributo()" type="checkbox" id="ResCar">
+            <input disabled class="Caixa" name="ASD" onclick="ModAtributo()" type="checkbox" id="ResCar">
             <label id="ResCarNum" for="ResCar">-1 Carisma</label>
           </td>
         </tr>
