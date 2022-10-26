@@ -24,9 +24,9 @@ var Proficiencias = [];
 var Caracteristicas = [];
 var Idiomas = [];
 var Equipamentos = [];
-var PericiasLimite = 2;
+var PericiasLimite = 0;
 
-// Vetores para comandos (Raças, Classes, Atributos)
+// Vetores para comandos (Raças, Classes)
 
 var Raca = {
   AnaoColina: function() {
@@ -304,11 +304,6 @@ var Raca = {
     //Proficiencias
 
     //Caracteristicas
-    document.getElementById("EscolhaPericiaExtraMeioElfo").hidden = (false);
-    var PerMeioElfo1 = document.getElementById("PericiaExtraMeioElfo1").options[PericiaExtraMeioElfo1.selectedIndex].value;
-    var PerMeioElfo2 = document.getElementById("PericiaExtraMeioElfo2").options[PericiaExtraMeioElfo2.selectedIndex].value;
-    document.getElementById(PerMeioElfo1).checked = (true);
-    document.getElementById(PerMeioElfo2).checked = (true);
     Caracteristicas.push("Visão_no_Escuro");
     Caracteristicas.push("Ancestral_Feérico");
     Caracteristicas.push("Versatilidade_em_Pericia");
@@ -319,6 +314,27 @@ var Raca = {
     Idiomas.push("Comum");
     Idiomas.push("Élfico");
     Idiomas.push(LinguaExtra);
+
+    //Pericias
+    PericiasLimite += 2;
+    ClassePericias['Acrobacia']();
+    ClassePericias['Arcanismo']();
+    ClassePericias['Atletismo']();
+    ClassePericias['Atuaçao']();
+    ClassePericias['Blefar']();
+    ClassePericias['Furtividade']();
+    ClassePericias['Historia']();
+    ClassePericias['Intimidaçao']();
+    ClassePericias['Intuiçao']();
+    ClassePericias['Investigaçao']();
+    ClassePericias['LidarAnimais']();
+    ClassePericias['Medicina']();
+    ClassePericias['Natureza']();
+    ClassePericias['Persuasao']();
+    ClassePericias['Percepçao']();
+    ClassePericias['Prestidigitaçao']();
+    ClassePericias['Religiao']();
+    ClassePericias['Sobrevivencia']();
   },
 
   MeioOrc: function() {
@@ -361,6 +377,310 @@ var Raca = {
     Idiomas.push("Infernal");
   }
 }
+
+var Classes = {
+  Barbaro: function () {
+    //Resistencias
+    document.getElementById("ResFor").checked = (true);
+    document.getElementById("ResCons").checked = (true);
+
+    //Pericias
+    PericiasLimite += 2;
+    ClassePericias['Atletismo']();
+    ClassePericias['Intimidaçao']();
+    ClassePericias['LidarAnimais']();
+    ClassePericias['Natureza']();
+    ClassePericias['Percepçao']();
+    ClassePericias['Sobrevivencia']();
+  },
+  Bardo: function () {
+    //Resistencias
+    document.getElementById("ResDes").checked = (true);
+    document.getElementById("ResCar").checked = (true);
+
+    //Pericias
+    PericiasLimite += 3;
+    ClassePericias['Acrobacia']();
+    ClassePericias['Arcanismo']();
+    ClassePericias['Atletismo']();
+    ClassePericias['Atuaçao']();
+    ClassePericias['Blefar']();
+    ClassePericias['Furtividade']();
+    ClassePericias['Historia']();
+    ClassePericias['Intimidaçao']();
+    ClassePericias['Intuiçao']();
+    ClassePericias['Investigaçao']();
+    ClassePericias['LidarAnimais']();
+    ClassePericias['Medicina']();
+    ClassePericias['Natureza']();
+    ClassePericias['Persuasao']();
+    ClassePericias['Percepçao']();
+    ClassePericias['Prestidigitaçao']();
+    ClassePericias['Religiao']();
+    ClassePericias['Sobrevivencia']();
+  },
+  Bruxo: function () {
+    //Resistencias
+    document.getElementById("ResSab").checked = (true);
+    document.getElementById("ResCar").checked = (true);
+
+    //PericiasClassePericias['']();
+    PericiasLimite += 2;
+    ClassePericias['Arcanismo']();
+    ClassePericias['Blefar']();
+    ClassePericias['Historia']();
+    ClassePericias['Intimidaçao']();
+    ClassePericias['Investigaçao']();
+    ClassePericias['Natureza']();
+    ClassePericias['Religiao']();
+  },
+  Clerigo: function () {
+    //Resistencias
+    document.getElementById("ResSab").checked = (true);
+    document.getElementById("ResCar").checked = (true);
+
+    //Pericias
+    PericiasLimite += 2;
+    ClassePericias['Historia']();
+    ClassePericias['Intuiçao']();
+    ClassePericias['Medicina']();
+    ClassePericias['Persuasao']();
+    ClassePericias['Religiao']();
+  },
+  Druida: function () {
+    //Resistencias
+    document.getElementById("ResInt").checked = (true);
+    document.getElementById("ResSab").checked = (true);
+
+    //Pericias
+    PericiasLimite += 2;
+    ClassePericias['Arcanismo']();
+    ClassePericias['LidarAnimais']();
+    ClassePericias['Intuiçao']();
+    ClassePericias['Medicina']();
+    ClassePericias['Natureza']();
+    ClassePericias['Percepçao']();
+    ClassePericias['Religiao']();
+    ClassePericias['Sobrevivencia']();
+  },
+  Feiticeiro: function () {
+    //Resistencias
+    document.getElementById("ResCons").checked = (true);
+    document.getElementById("ResCar").checked = (true);
+
+    //Pericias
+    PericiasLimite += 2;
+    ClassePericias['Arcanismo']();
+    ClassePericias['Blefar']();
+    ClassePericias['Intuiçao']();
+    ClassePericias['Intimidaçao']();
+    ClassePericias['Persuasao']();
+    ClassePericias['Religiao']();
+  },
+  Guerreiro: function () {
+    //Resistencias
+    document.getElementById("ResFor").checked = (true);
+    document.getElementById("ResCons").checked = (true);
+
+    //Pericias
+    PericiasLimite += 2;
+    ClassePericias['Acrobacia']();
+    ClassePericias['LidarAnimais']();
+    ClassePericias['Atletismo']();
+    ClassePericias['Historia']();
+    ClassePericias['Intuiçao']();
+    ClassePericias['Intimidaçao']();
+    ClassePericias['Percepçao']();
+    ClassePericias['Sobrevivencia']();
+  },
+  Ladino: function () {
+    //Resistencias
+    document.getElementById("ResDes").checked = (true);
+    document.getElementById("ResInt").checked = (true);
+
+    //Pericias
+    PericiasLimite += 4;
+    ClassePericias['Acrobacia']();
+    ClassePericias['Atletismo']();
+    ClassePericias['Atuaçao']();
+    ClassePericias['Blefar']();
+    ClassePericias['Furtividade']();
+    ClassePericias['Intimidaçao']();
+    ClassePericias['Intuiçao']();
+    ClassePericias['Investigaçao']();
+    ClassePericias['Percepçao']();
+    ClassePericias['Persuasao']();
+    ClassePericias['Prestidigitaçao']();
+  },
+  Mago: function () {
+    //Resistencias
+    document.getElementById("ResInt").checked = (true);
+    document.getElementById("ResSab").checked = (true);
+
+    //Pericias
+    PericiasLimite += 2;
+    ClassePericias['Arcanismo']();
+    ClassePericias['Historia']();
+    ClassePericias['Intuiçao']();
+    ClassePericias['Investigaçao']();
+    ClassePericias['Medicina']();
+    ClassePericias['Religiao']();
+  },
+  Monge: function () {
+    //Resistencias
+    document.getElementById("ResFor").checked = (true);
+    document.getElementById("ResDes").checked = (true);
+
+    //Pericias
+    PericiasLimite += 2;
+    ClassePericias['Acrobacia']();
+    ClassePericias['Atletismo']();
+    ClassePericias['Furtividade']();
+    ClassePericias['Historia']();
+    ClassePericias['Intuiçao']();
+    ClassePericias['Religiao']();
+  },
+  Paladino: function () {
+    //Resistencias
+    document.getElementById("ResSab").checked = (true);
+    document.getElementById("ResCar").checked = (true);
+
+    //Pericias
+    PericiasLimite += 2;
+    ClassePericias['Atletismo']();
+    ClassePericias['Intuiçao']();
+    ClassePericias['Intimidaçao']();
+    ClassePericias['Medicina']();
+    ClassePericias['Persuasao']();
+    ClassePericias['Religiao']();
+  },
+  Patrulheiro: function () {
+    //Resistencias
+    document.getElementById("ResFor").checked = (true);
+    document.getElementById("ResDes").checked = (true);
+
+    //Pericias
+    PericiasLimite += 3;
+    ClassePericias['LidarAnimais']();
+    ClassePericias['Atletismo']();
+    ClassePericias['Furtividade']();
+    ClassePericias['Intuiçao']();
+    ClassePericias['Investigaçao']();
+    ClassePericias['Natureza']();
+    ClassePericias['Percepçao']();
+    ClassePericias['Sobrevivencia']();
+  }
+}
+
+// Prints
+
+function PrintAtributos() {
+    document.getElementById("For").innerHTML = ("Força: " + Força);
+    document.getElementById("Des").innerHTML = ("Destreza: " + Destreza);
+    document.getElementById("Cons").innerHTML = ("Constituição: " + Constituiçao);
+    document.getElementById("Int").innerHTML = ("Inteligência: " + Inteligencia);
+    document.getElementById("Sab").innerHTML = ("Sabedoria: " + Sabedoria);
+    document.getElementById("Car").innerHTML = ("Carisma: " + Carisma);
+    document.getElementById("Extra").innerHTML = ("Pontos livres: " + Extra);
+  }
+
+function PrintProficiencias() {
+  for (var i = 0; i < Proficiencias.length; i++) {
+    var Printf = Proficiencias[i];
+    document.getElementById("Prof").value += (Printf + "\n");
+  }
+}
+
+function PrintCaracteristicas() {
+  for (var i = 0; i < Caracteristicas.length; i++) {
+    var Printf = Caracteristicas[i];
+    document.getElementById("Caracter").value += (Printf + "\n");
+  }
+}
+
+function PrintIdioma() {
+  for (var i = 0; i < Idiomas.length; i++) {
+    var Printf = Idiomas[i]
+    document.getElementById("Lingua").value += (Printf + "\n");
+  }
+
+}
+
+//Apagar
+
+function ApagarAtributos() {
+    Força = 8;
+    ForçaMin = 8;
+    Destreza = 8;
+    DestrezaMin = 8;
+    Constituiçao = 8;
+    ConstituiçaoMin = 8;
+    Inteligencia = 8;
+    InteligenciaMin = 8;
+    Sabedoria = 8;
+    SabedoriaMin = 8;
+    Carisma = 8;
+    CarismaMin = 8;
+    Extra = 24;
+    PericiasLimite = 0;
+  }
+
+function ApagarProficiencias() {
+  Proficiencias = [];
+  document.getElementById("Prof").value = ("");
+ }
+
+function ApagarCaracteristicas() {
+ Caracteristicas = [];
+ document.getElementById("Caracter").value = ("");
+}
+
+function ApagarAbasEspeciais() {
+  //Anão da AnaoMontanha
+  document.getElementById("EscolhaFerramentasAnao").hidden = (true);
+  //Draconico
+  document.getElementById("AncestralidadeDraconica").hidden = (true);
+  //Idiomas
+  document.getElementById("IdiomaExtra").hidden = (true);
+}
+
+function ApagarIdioma() {
+  Idiomas = [];
+  document.getElementById("Lingua").value = ("");
+
+}
+
+function ApagarResistencia() {
+  document.getElementById("ResFor").checked = (false);
+  document.getElementById("ResDes").checked = (false);
+  document.getElementById("ResCons").checked = (false);
+  document.getElementById("ResInt").checked = (false);
+  document.getElementById("ResSab").checked = (false);
+  document.getElementById("ResCar").checked = (false);
+}
+
+function ApagarPericia() {
+  var PericiasAtivadas = document.querySelectorAll("input[class='PericiaAtivada']");
+  var PericiasAtivadasNumbers = PericiasAtivadas.length;
+  var PericiasDesativadas = document.querySelectorAll("input[class='PericiaDesativada']");
+  var PericiasDesativadasNumbers = PericiasDesativadas.length;
+  PericiasLimite = 0;
+
+  for (var i = 0; i < PericiasAtivadasNumbers; i++) {
+    PericiasAtivadas[i].classList.remove("PericiaAtivada");
+    PericiasAtivadas[i].classList.add("PericiaDesativada");
+    PericiasAtivadas[i].disabled = (true);
+    PericiasAtivadas[i].checked = (false);
+  };
+
+  for (var i = 0; i < PericiasDesativadasNumbers; i++) {
+    PericiasDesativadas[i].disabled = (true);
+    PericiasDesativadas[i].checked = (false);
+  };
+
+}
+
+//Atributos,Pericias,Resistencias
 
 var AtributosSelecao = {
   MenosForça: function() {
@@ -509,117 +829,123 @@ var AtributosSelecao = {
   }
 }
 
-// Prints
-
-function PrintAtributos() {
-    document.getElementById("For").innerHTML = ("Força: " + Força);
-    document.getElementById("Des").innerHTML = ("Destreza: " + Destreza);
-    document.getElementById("Cons").innerHTML = ("Constituição: " + Constituiçao);
-    document.getElementById("Int").innerHTML = ("Inteligência: " + Inteligencia);
-    document.getElementById("Sab").innerHTML = ("Sabedoria: " + Sabedoria);
-    document.getElementById("Car").innerHTML = ("Carisma: " + Carisma);
-    document.getElementById("Extra").innerHTML = ("Pontos livres: " + Extra);
+var ClassePericias = {
+  Acrobacia: function () {
+    document.getElementById("Acrobacia").classList.remove("PericiaDesativada");
+    document.getElementById("Acrobacia").classList.add("PericiaAtivada");
+    document.getElementById("Acrobacia").disabled = (false);
+  },
+  Arcanismo: function () {
+    document.getElementById("Arcanismo").classList.remove("PericiaDesativada");
+    document.getElementById("Arcanismo").classList.add("PericiaAtivada");
+    document.getElementById("Arcanismo").disabled = (false);
+  },
+  Atletismo: function () {
+    document.getElementById("Atletismo").classList.remove("PericiaDesativada");
+    document.getElementById("Atletismo").classList.add("PericiaAtivada");
+    document.getElementById("Atletismo").disabled = (false);
+  },
+  Atuaçao: function () {
+    document.getElementById("Atuaçao").classList.remove("PericiaDesativada");
+    document.getElementById("Atuaçao").classList.add("PericiaAtivada");
+    document.getElementById("Atuaçao").disabled = (false);
+  },
+  Blefar: function () {
+    document.getElementById("Blefar").classList.remove("PericiaDesativada");
+    document.getElementById("Blefar").classList.add("PericiaAtivada");
+    document.getElementById("Blefar").disabled = (false);
+  },
+  Furtividade: function () {
+    document.getElementById("Furtividade").classList.remove("PericiaDesativada");
+    document.getElementById("Furtividade").classList.add("PericiaAtivada");
+    document.getElementById("Furtividade").disabled = (false);
+  },
+  Historia: function () {
+    document.getElementById("Historia").classList.remove("PericiaDesativada");
+    document.getElementById("Historia").classList.add("PericiaAtivada");
+    document.getElementById("Historia").disabled = (false);
+  },
+  Intimidaçao: function () {
+    document.getElementById("Intimidaçao").classList.remove("PericiaDesativada");
+    document.getElementById("Intimidaçao").classList.add("PericiaAtivada");
+    document.getElementById("Intimidaçao").disabled = (false);
+  },
+  Intuiçao: function () {
+    document.getElementById("Intuiçao").classList.remove("PericiaDesativada");
+    document.getElementById("Intuiçao").classList.add("PericiaAtivada");
+    document.getElementById("Intuiçao").disabled = (false);
+  },
+  Investigaçao: function () {
+    document.getElementById("Investigaçao").classList.remove("PericiaDesativada");
+    document.getElementById("Investigaçao").classList.add("PericiaAtivada");
+    document.getElementById("Investigaçao").disabled = (false);
+  },
+  LidarAnimais: function () {
+    document.getElementById("LidarAnimais").classList.remove("PericiaDesativada");
+    document.getElementById("LidarAnimais").classList.add("PericiaAtivada");
+    document.getElementById("LidarAnimais").disabled = (false);
+  },
+  Medicina: function () {
+    document.getElementById("Medicina").classList.remove("PericiaDesativada");
+    document.getElementById("Medicina").classList.add("PericiaAtivada");
+    document.getElementById("Medicina").disabled = (false);
+  },
+  Natureza: function () {
+    document.getElementById("Natureza").classList.remove("PericiaDesativada");
+    document.getElementById("Natureza").classList.add("PericiaAtivada");
+    document.getElementById("Natureza").disabled = (false);
+  },
+  Persuasao: function () {
+    document.getElementById("Persuasao").classList.remove("PericiaDesativada");
+    document.getElementById("Persuasao").classList.add("PericiaAtivada");
+    document.getElementById("Persuasao").disabled = (false);
+  },
+  Percepçao: function () {
+    document.getElementById("Percepçao").classList.remove("PericiaDesativada");
+    document.getElementById("Percepçao").classList.add("PericiaAtivada");
+    document.getElementById("Percepçao").disabled = (false);
+  },
+  Prestidigitaçao: function () {
+    document.getElementById("Prestidigitaçao").classList.remove("PericiaDesativada");
+    document.getElementById("Prestidigitaçao").classList.add("PericiaAtivada");
+    document.getElementById("Prestidigitaçao").disabled = (false);
+  },
+  Religiao: function () {
+    document.getElementById("Religiao").classList.remove("PericiaDesativada");
+    document.getElementById("Religiao").classList.add("PericiaAtivada");
+    document.getElementById("Religiao").disabled = (false);
+  },
+  Sobrevivencia: function () {
+    document.getElementById("Sobrevivencia").classList.remove("PericiaDesativada");
+    document.getElementById("Sobrevivencia").classList.add("PericiaAtivada");
+    document.getElementById("Sobrevivencia").disabled = (false);
   }
-
-function PrintProficiencias() {
-  for (var i = 0; i < Proficiencias.length; i++) {
-    var Printf = Proficiencias[i];
-    document.getElementById("Prof").value += (Printf + "\n");
-  }
 }
-
-function PrintCaracteristicas() {
-  for (var i = 0; i < Caracteristicas.length; i++) {
-    var Printf = Caracteristicas[i];
-    document.getElementById("Caracter").value += (Printf + "\n");
-  }
-}
-
-function PrintIdioma() {
-  for (var i = 0; i < Idiomas.length; i++) {
-    var Printf = Idiomas[i]
-    document.getElementById("Lingua").value += (Printf + "\n");
-  }
-
-}
-
-//Apagar
-
-function ApagarAtributos() {
-    Força = 8;
-    ForçaMin = 8;
-    Destreza = 8;
-    DestrezaMin = 8;
-    Constituiçao = 8;
-    ConstituiçaoMin = 8;
-    Inteligencia = 8;
-    InteligenciaMin = 8;
-    Sabedoria = 8;
-    SabedoriaMin = 8;
-    Carisma = 8;
-    CarismaMin = 8;
-    Extra = 24;
-  }
-
-function ApagarProficiencias() {
-  Proficiencias = [];
-  document.getElementById("Prof").value = ("");
- }
-
-function ApagarCaracteristicas() {
- Caracteristicas = [];
- document.getElementById("Caracter").value = ("");
-}
-
-function ApagarAbasEspeciais() {
-  //Anão da AnaoMontanha
-  document.getElementById("EscolhaFerramentasAnao").hidden = (true);
-  //Meio Elfo
-  document.getElementById("EscolhaPericiaExtraMeioElfo").hidden = (true);
-  //Draconico
-  document.getElementById("AncestralidadeDraconica").hidden = (true);
-  //Idiomas
-  document.getElementById("IdiomaExtra").hidden = (true);
-}
-
-function ApagarPericia() {
-  document.getElementById("Acrobacia").checked = (false);
-  document.getElementById("Arcanismo").checked = (false);
-  document.getElementById("Atletismo").checked = (false);
-  document.getElementById("Atuaçao").checked = (false);
-  document.getElementById("Blefar").checked = (false);
-  document.getElementById("Furtividade").checked = (false);
-  document.getElementById("Historia").checked = (false);
-  document.getElementById("Intimidaçao").checked = (false);
-  document.getElementById("Intuiçao").checked = (false);
-  document.getElementById("Investigaçao").checked = (false);
-  document.getElementById("LidarAnimais").checked = (false);
-  document.getElementById("Medicina").checked = (false);
-  document.getElementById("Natureza").checked = (false);
-  document.getElementById("Percepçao").checked = (false);
-  document.getElementById("Persuasao").checked = (false);
-  document.getElementById("Prestidigitaçao").checked = (false);
-  document.getElementById("Religiao").checked = (false);
-  document.getElementById("Sobrevivencia").checked = (false);
-}
-
-function ApagarIdioma() {
-  Idiomas = [];
-  document.getElementById("Lingua").value = ("");
-
-}
-
-//Atributos,Pericias,Resistencias
 
 function DistribuirPontosAtributos() {
   AtributoBotaoClick = document.querySelectorAll("button[class='BotaoAtributo']:hover");
   AtributosSelecao[(AtributoBotaoClick[0].id)]();
 }
 
+function DistribuirPericias() {
+  PericiasAtivadasChecked = document.querySelectorAll("input[class='PericiaAtivada']:checked")
+  PericiasAtivadasUnchecked = document.querySelectorAll("input[class='PericiaAtivada']:not(:checked)")
+  if (PericiasAtivadasChecked.length == PericiasLimite) {
+    for (var i = 0; i < PericiasAtivadasUnchecked.length; i++) {
+      PericiasAtivadasUnchecked[i].disabled = (true);
+    }
+  } else {
+    for (var i = 0; i < PericiasAtivadasUnchecked.length; i++) {
+      PericiasAtivadasUnchecked[i].disabled = (false);
+    }
+  }
+}
+
 //Parte Principal
 
 function RaçaMudanca() {
-  var Escolha = document.getElementById("Raça").options[Raça.selectedIndex].value;
+  var EscolhaRaca = document.getElementById("Raça").options[Raça.selectedIndex].value;
+  var EscolhaClasse = document.getElementById("Classe").options[Classe.selectedIndex].value;
   //Apagar
   ApagarAtributos();
   ApagarProficiencias();
@@ -629,10 +955,32 @@ function RaçaMudanca() {
   ApagarIdioma();
 
   //Mudanças
-  Raca[Escolha]();
+  Classes[EscolhaClasse]();
+  Raca[EscolhaRaca]();
 
   //Prints
   PrintAtributos();
+  PrintProficiencias();
+  PrintCaracteristicas();
+  PrintIdioma();
+}
+
+function ClasseMudanca() {
+  var EscolhaClasse = document.getElementById("Classe").options[Classe.selectedIndex].value;
+  var EscolhaRaca = document.getElementById("Raça").options[Raça.selectedIndex].value;
+  //Apagar
+  ApagarProficiencias();
+  ApagarCaracteristicas();
+  ApagarAbasEspeciais();
+  ApagarIdioma();
+  ApagarResistencia();
+  ApagarPericia();
+
+  //Mudanças
+  Raca[EscolhaRaca]();
+  Classes[EscolhaClasse]();
+
+  //Prints
   PrintProficiencias();
   PrintCaracteristicas();
   PrintIdioma();

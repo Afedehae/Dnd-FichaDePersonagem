@@ -46,8 +46,7 @@
         </td>
         <td>
           <label for="Classe">Classe: </label>
-          <select onchange="ClasseTudo()" id="Classe">
-            <option selected>Nda</option>
+          <select onchange="ClasseMudanca()" id="Classe">
             <option value="Barbaro">Bárbaro</option>
             <option value="Bardo">Bardo</option>
             <option value="Bruxo">Bruxo</option>
@@ -65,7 +64,6 @@
         <td>
           <label for="Antecedente">Antecedente: </label>
           <select id="Antecedente">
-            <option selected>Nda</option>
             <option value="Acólito">Acólito</option>
             <option value="ArtesaoGuilda">Artesão_de_Guilda</option>
             <option value="Artista">Artista</option>
@@ -115,47 +113,7 @@
             <option value="FerramentasPedreiro">Ferramentas_de_Pedreiro</option>
           </select>
         </td>
-        <td id="EscolhaPericiaExtraMeioElfo" hidden>
-          <label for="PericiaExtraMeioElfo">Pericia_Extra: </label>
-          <select id="PericiaExtraMeioElfo1" onchange="ClasseTudo()">
-            <option value="Acrobacia">Acrobacia</option>
-            <option value="Arcanismo">Arcanismo</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Atuaçao">Atuação</option>
-            <option value="Blefar">Blefar</option>
-            <option value="Furtividade">Furtividade</option>
-            <option value="Historia">História</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="LidarAnimais">Lidar_Com_Animais</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Natureza">Natureza</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Prestidigitaçao">Prestidigitação</option>
-            <option value="Religiao">Religião</option>
-            <option value="Sobrevivencia">Sobrevivência</option>
-          </select>
-          <select id="PericiaExtraMeioElfo2" onchange="ClasseTudo()">
-            <option value="Acrobacia">Acrobacia</option>
-            <option value="Arcanismo">Arcanismo</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Atuaçao">Atuação</option>
-            <option value="Blefar">Blefar</option>
-            <option value="Furtividade">Furtividade</option>
-            <option value="Historia">História</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="LidarAnimais">Lidar_Com_Animais</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Natureza">Natureza</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Prestidigitaçao">Prestidigitação</option>
-            <option value="Religiao">Religião</option>
-            <option value="Sobrevivencia">Sobrevivência</option>
-          </select>
-        </td>
+        
         <td id="EscolhaInstrumentoBardo" hidden>
           <label for="InstrumentoBardo1">Instrumentos Musicais: </label>
           <select id="InstrumentoBardo1" onchange="ClasseTudo()">
@@ -225,337 +183,6 @@
             <option value="SuprimentosCervejeiro">Suprimentos_de_Cervejeiro</option>
             <option value="SuprimentosCaligrafia">Suprimentos_de_Caligrafia</option>
             <option value="UtensíliosCozinheiro">Utensílios_de_Cozinheiro</option>
-          </select>
-        </td>
-        <td id="PericiaClasseBarbaro" hidden onchange="ClasseTudo()">
-          <label for="PericiaBarbaro1">Pericias_do_Barbaro: </label>
-          <select id="PericiaBarbaro1">
-            <option value="LidarAnimais">Lidar_Com_Animais</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Natureza">Natureza</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Sobrevivencia">Sobrevivência</option>
-          </select>
-          <select id="PericiaBarbaro2">
-            <option value="LidarAnimais">Lidar_Com_Animais</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Natureza">Natureza</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Sobrevivencia">Sobrevivência</option>
-          </select>
-        </td>
-        <td id="PericiaClasseBardo" hidden onchange="ClasseTudo()">
-          <label for="PericiaBardo1">Pericias_do_Bardo: </label>
-          <select id="PericiaBardo1">
-            <option value="Acrobacia">Acrobacia</option>
-            <option value="Arcanismo">Arcanismo</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Atuaçao">Atuação</option>
-            <option value="Blefar">Blefar</option>
-            <option value="Furtividade">Furtividade</option>
-            <option value="Historia">História</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="LidarAnimais">Lidar_Com_Animais</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Natureza">Natureza</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Prestidigitaçao">Prestidigitação</option>
-            <option value="Religiao">Religião</option>
-            <option value="Sobrevivencia">Sobrevivência</option>
-          </select>
-          <select id="PericiaBardo2">
-            <option value="Acrobacia">Acrobacia</option>
-            <option value="Arcanismo">Arcanismo</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Atuaçao">Atuação</option>
-            <option value="Blefar">Blefar</option>
-            <option value="Furtividade">Furtividade</option>
-            <option value="Historia">História</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="LidarAnimais">Lidar_Com_Animais</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Natureza">Natureza</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Prestidigitaçao">Prestidigitação</option>
-            <option value="Religiao">Religião</option>
-            <option value="Sobrevivencia">Sobrevivência</option>
-          </select>
-          <select id="PericiaBardo3">
-            <option value="Acrobacia">Acrobacia</option>
-            <option value="Arcanismo">Arcanismo</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Atuaçao">Atuação</option>
-            <option value="Blefar">Blefar</option>
-            <option value="Furtividade">Furtividade</option>
-            <option value="Historia">História</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="LidarAnimais">Lidar_Com_Animais</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Natureza">Natureza</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Prestidigitaçao">Prestidigitação</option>
-            <option value="Religiao">Religião</option>
-            <option value="Sobrevivencia">Sobrevivência</option>
-          </select>
-        </td>
-        <td id="PericiaClasseBruxo" hidden onchange="ClasseTudo()">
-          <label for="PericiaBruxo1">Pericias_do_Bruxo: </label>
-          <select id="PericiaBruxo1">
-            <option value="Arcanismo">Arcanismo</option>
-            <option value="Blefar">Blefar</option>
-            <option value="Historia">História</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="Natureza">Natureza</option>
-            <option value="Religiao">Religião</option>
-          </select>
-          <select id="PericiaBruxo2">
-            <option value="Arcanismo">Arcanismo</option>
-            <option value="Blefar">Blefar</option>
-            <option value="Historia">História</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="Natureza">Natureza</option>
-            <option value="Religiao">Religião</option>
-          </select>
-        </td>
-        <td id="PericiaClasseClerigo" hidden onchange="ClasseTudo()">
-          <label for="PericiaClerigo1">Pericia_do_Clerigo</label>
-          <select id="PericiaClerigo1">
-            <option value="Historia">História</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Persuasao">Persuasão</option>
-            <option value="Religiao">Religião</option>
-          </select>
-          <select id="PericiaClerigo2">
-            <option value="Historia">História</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Persuasao">Persuasão</option>
-            <option value="Religiao">Religião</option>
-          </select>
-        </td>
-        <td id="PericiaClasseDruida" hidden onchange="ClasseTudo()">
-          <label for="PericiaDruida1">Pericias_do_Druida</label>
-          <select id="PericiaDruida1">
-            <option value="Arcanismo">Arcanismo</option>
-            <option value="LidarAnimais">Lidar_Com_Animais</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Natureza">Natureza</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Religiao">Religião</option>
-            <option value="Sobrevivencia">Sobrevivência</option>
-          </select>
-          <select id="PericiaDruida2">
-            <option value="Arcanismo">Arcanismo</option>
-            <option value="LidarAnimais">Lidar_Com_Animais</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Natureza">Natureza</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Religiao">Religião</option>
-            <option value="Sobrevivencia">Sobrevivência</option>
-          </select>
-        </td>
-        <td id="PericiaClasseFeiticeiro" hidden onchange="ClasseTudo()">
-          <label for="PericiaFeiticeiro1">Pericia_do_Feiticeiro</label>
-          <select id="PericiaFeiticeiro1">
-            <option value="Arcanismo">Arcanismo</option>
-            <option value="Blefar">Blefar</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Persuasao">Persuasão</option>
-            <option value="Religiao">Religião</option>
-          </select>
-          <select id="PericiaFeiticeiro2">
-            <option value="Arcanismo">Arcanismo</option>
-            <option value="Blefar">Blefar</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Persuasao">Persuasão</option>
-            <option value="Religiao">Religião</option>
-          </select>
-        </td>
-        <td id="PericiaClasseGuerreiro" hidden onchange="ClasseTudo()">
-          <label for="PericiaGuerreiro1">Pericias_do_Guerreiro</label>
-          <select id="PericiaGuerreiro1">
-            <option value="Acrobacia">Acrobacia</option>
-            <option value="LidarAnimais">Lidar_Com_Animais</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Historia">História</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Sobrevivencia">Sobrevivência</option>
-          </select>
-          <select id="PericiaGuerreiro2">
-            <option value="Acrobacia">Acrobacia</option>
-            <option value="LidarAnimais">Lidar_Com_Animais</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Historia">História</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Sobrevivencia">Sobrevivência</option>
-          </select>
-        </td>
-        <td id="PericiaClasseLadino" hidden onchange="ClasseTudo()">
-          <label for="PericiaLadino1">Pericias_do_Ladino</label>
-          <select id="PericiaLadino1">
-            <option value="Acrobacia">Acrobacia</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Atuaçao">Atuação</option>
-            <option value="Blefar">Blefar</option>
-            <option value="Furtividade">Furtividade</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Persuasao">Persuasão</option>
-            <option value="Prestidigitaçao">Prestidigitação</option>
-          </select>
-          <select id="PericiaLadino2">
-            <option value="Acrobacia">Acrobacia</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Atuaçao">Atuação</option>
-            <option value="Blefar">Blefar</option>
-            <option value="Furtividade">Furtividade</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Persuasao">Persuasão</option>
-            <option value="Prestidigitaçao">Prestidigitação</option>
-          </select>
-          <select id="PericiaLadino3">
-            <option value="Acrobacia">Acrobacia</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Atuaçao">Atuação</option>
-            <option value="Blefar">Blefar</option>
-            <option value="Furtividade">Furtividade</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Persuasao">Persuasão</option>
-            <option value="Prestidigitaçao">Prestidigitação</option>
-          </select>
-          <select id="PericiaLadino4">
-            <option value="Acrobacia">Acrobacia</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Atuaçao">Atuação</option>
-            <option value="Blefar">Blefar</option>
-            <option value="Furtividade">Furtividade</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Persuasao">Persuasão</option>
-            <option value="Prestidigitaçao">Prestidigitação</option>
-          </select>
-        </td>
-        <td id="PericiaClasseMago" hidden onchange="ClasseTudo()">
-          <label for="PericiaMago1">Pericias_do_Mago: </label>
-          <select id="PericiaMago1">
-            <option value="Arcanismo">Arcanismo</option>
-            <option value="Historia">História</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Religiao">Religião</option>
-          </select>
-          <select id="PericiaMago2">
-            <option value="Arcanismo">Arcanismo</option>
-            <option value="Historia">História</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Religiao">Religião</option>
-          </select>
-        </td>
-        <td id="PericiaClasseMonge" hidden onchange="ClasseTudo()">
-          <label for="PericiaMonge1">Pericias_do_Monge: </label>
-          <select id="PericiaMonge1">
-            <option value="Acrobacia">Acrobacia</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Furtividade">Furtividade</option>
-            <option value="Historia">História</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Religiao">Religião</option>
-          </select>
-          <select id="PericiaMonge2">
-            <option value="Acrobacia">Acrobacia</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Furtividade">Furtividade</option>
-            <option value="Historia">História</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Religiao">Religião</option>
-          </select>
-        </td>
-        <td id="PericiaClassePaladino" hidden onchange="ClasseTudo()">
-          <label for="PericiaPaladino1">Pericia_do_Paladino</label>
-          <select id="PericiaPaladino1">
-            <option value="Atletismo">Atletismo</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Persuasao">Persuasão</option>
-            <option value="Religiao">Religião</option>
-          </select>
-          <select id="PericiaPaladino2">
-            <option value="Atletismo">Atletismo</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Intimidaçao">Intimidação</option>
-            <option value="Medicina">Medicina</option>
-            <option value="Persuasao">Persuasão</option>
-            <option value="Religiao">Religião</option>
-          </select>
-        </td>
-        <td id="PericiaClassePatrulheiro" hidden onchange="ClasseTudo()">
-          <label for="PericiaPatrulheiro1">Pericia_do_Patrulheiro: </label>
-          <select id="PericiaPatrulheiro1">
-            <option value="LidarAnimais">Lidar_Com_Animais</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Furtividade">Furtividade</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="Natureza">Natureza</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Sobrevivencia">Sobrevivência</option>
-          </select>
-          <select id="PericiaPatrulheiro2">
-            <option value="LidarAnimais">Lidar_Com_Animais</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Furtividade">Furtividade</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="Natureza">Natureza</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Sobrevivencia">Sobrevivência</option>
-          </select>
-          <select id="PericiaPatrulheiro3">
-            <option value="LidarAnimais">Lidar_Com_Animais</option>
-            <option value="Atletismo">Atletismo</option>
-            <option value="Furtividade">Furtividade</option>
-            <option value="Intuiçao">Intuição</option>
-            <option value="Investigaçao">Investigação</option>
-            <option value="Natureza">Natureza</option>
-            <option value="Percepçao">Percepção</option>
-            <option value="Sobrevivencia">Sobrevivência</option>
           </select>
         </td>
         <td id="BruxoEscolhaPatrono" hidden>
@@ -1228,115 +855,115 @@
         </tr>
       </table>
 
-      <table id="TabelaPericias" border="1">
+      <table id="TabelaPericias" border="1" onclick="DistribuirPericias()">
         <tr>
           <th>Perícias</th>
         </tr>
         <tr id="Verde">
           <td>
-            <input disabled type="checkbox" id="Acrobacia">
+            <input disabled type="checkbox" id="Acrobacia" class="PericiaDesativada">
             <label id="AcrobaciaNum" for="Acrobacia">-1 Acrobacia <i>(Des)</i></label>
           </td>
         </tr>
         <tr id="Azul">
           <td>
-            <input disabled type="checkbox" id="Arcanismo">
+            <input disabled type="checkbox" id="Arcanismo" class="PericiaDesativada">
             <label id="ArcanismoNum" for="Arcanismo">-1 Arcanismo <i>(Int)</i></label>
           </td>
         </tr>
         <tr id="Vermelho">
           <td>
-            <input name="ASD" disabled type="checkbox" id="Atletismo">
+            <input disabled type="checkbox" id="Atletismo" class="PericiaDesativada">
             <label id="AtletismoNum" for="Atletismo">-1 Atletismo <i>(For)</i></label>
           </td>
         </tr>
         <tr id="Amarelo">
           <td>
-            <input disabled type="checkbox" id="Atuaçao">
+            <input disabled type="checkbox" id="Atuaçao" class="PericiaDesativada">
             <label id="AtuaçaoNum" for="Atuaçao">-1 Atuação <i>(Car)</i></label>
           </td>
         </tr>
         <tr id="Amarelo">
           <td>
-            <input disabled type="checkbox" id="Blefar">
+            <input disabled type="checkbox" id="Blefar" class="PericiaDesativada">
             <label id="BlefarNum" for="Blefar">-1 Blefar <i>(Car)</i></label>
           </td>
         </tr>
         <tr id="Verde">
           <td>
-            <input disabled type="checkbox" id="Furtividade">
+            <input disabled type="checkbox" id="Furtividade" class="PericiaDesativada">
             <label id="FurtividadeNum" for="Furtividade">-1 Furtividade <i>(Des)</i></label>
           </td>
         </tr>
         <tr id="Azul">
           <td>
-            <input disabled type="checkbox" id="Historia">
+            <input disabled type="checkbox" id="Historia" class="PericiaDesativada">
             <label id="HistoriaNum" for="Historia">-1 História <i>(Int)</i></label>
           </td>
         </tr>
         <tr id="Amarelo">
           <td>
-            <input disabled type="checkbox" id="Intimidaçao">
+            <input disabled type="checkbox" id="Intimidaçao" class="PericiaDesativada">
             <label id="IntimidaçaoNum" for="Intimidaçao">-1 Intimidação <i>(Car)</i></label>
           </td>
         </tr>
         <tr id="Violeta">
           <td>
-            <input disabled type="checkbox" id="Intuiçao">
+            <input disabled type="checkbox" id="Intuiçao" class="PericiaDesativada">
             <label id="IntuiçaoNum" for="Intuiçao">-1 Intuição <i>(Sab)</i></label>
           </td>
         </tr>
         <tr id="Azul">
           <td>
-            <input disabled type="checkbox" id="Investigaçao">
+            <input disabled type="checkbox" id="Investigaçao" class="PericiaDesativada">
             <label id="InvestigaçaoNum" for="Investigaçao">-1 Investigação <i>(Int)</i></label>
           </td>
         </tr>
         <tr id="Violeta">
           <td>
-            <input disabled type="checkbox" id="LidarAnimais">
+            <input disabled type="checkbox" id="LidarAnimais" class="PericiaDesativada">
             <label id="LidarAnimaisNum" for="LidarAnimais">-1 Lidar_Com_Animais <i>(Sab)</i></label>
           </td>
         </tr>
         <tr id="Violeta">
           <td>
-            <input disabled type="checkbox" id="Medicina">
+            <input disabled type="checkbox" id="Medicina" class="PericiaDesativada">
             <label id="MedicinaNum" for="Medicina">-1 Medicina <i>(Sab)</i></label>
           </td>
         </tr>
         <tr id="Azul">
           <td>
-            <input disabled type="checkbox" id="Natureza">
+            <input disabled type="checkbox" id="Natureza" class="PericiaDesativada">
             <label id="NaturezaNum" for="Natureza">-1 Natureza <i>(Int)</i></label>
           </td>
         </tr>
         <tr id="Violeta">
           <td>
-            <input disabled type="checkbox" id="Percepçao">
+            <input disabled type="checkbox" id="Percepçao" class="PericiaDesativada">
             <label id="PercepçaoNum" for="Percepçao">-1 Percepção <i>(Sab)</i></label>
           </td>
         </tr>
         <tr id="Amarelo">
           <td>
-            <input disabled type="checkbox" id="Persuasao">
+            <input disabled type="checkbox" id="Persuasao" class="PericiaDesativada">
             <label id="PersuasaoNum" for="Persuasao">-1 Persuasão <i>(Car)</i></label>
           </td>
         </tr>
         <tr id="Verde">
           <td>
-            <input disabled type="checkbox" id="Prestidigitaçao">
+            <input disabled type="checkbox" id="Prestidigitaçao" class="PericiaDesativada">
             <label id="PrestidigitaçaoNum" for="Prestidigitaçao">-1 Prestidigitação <i>(Des)</i></label>
           </td>
         </tr>
         <tr id="Azul">
           <td>
-            <input disabled type="checkbox" id="Religiao">
+            <input disabled type="checkbox" id="Religiao" class="PericiaDesativada">
             <label id="ReligiaoNum" for="Religiao">-1 Religião <i>(Int)</i></label>
           </td>
         </tr>
         <tr id="Violeta">
           <td>
-            <input disabled type="checkbox" id="Sobrevivencia">
+            <input disabled type="checkbox" id="Sobrevivencia" class="PericiaDesativada">
             <label id="SobrevivenciaNum" for="Sobrevivencia">-1 Sobrevivência <i>(Sab)</i></label>
           </td>
         </tr>
