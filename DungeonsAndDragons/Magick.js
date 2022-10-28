@@ -31,10 +31,10 @@ var PericiasLimite = 0;
 var Raca = {
   AnaoColina: function() {
     //Atributos
-    Constituiçao += 2;
-    ConstituiçaoMin += 2;
-    Sabedoria += 1;
-    SabedoriaMin += 1;
+    Constituiçao = 10;
+    ConstituiçaoMin = 10;
+    Sabedoria = 9;
+    SabedoriaMin = 9;
 
     //Proficiencias
     Proficiencias.push("Machados_de_Batalha");
@@ -58,10 +58,10 @@ var Raca = {
 
   AnaoMontanha: function() {
     //Atributos
-    Constituiçao += 2;
-    ConstituiçaoMin += 2;
-    Força += 2;
-    ForçaMin += 2;
+    Constituiçao = 10;
+    ConstituiçaoMin = 10;
+    Força = 10;
+    ForçaMin = 10;
 
     //Proficiencias
     document.getElementById("EscolhaFerramentasAnao").hidden = (false);
@@ -89,10 +89,10 @@ var Raca = {
 
   AltoElfo: function() {
     //Atributos
-    Destreza += 2;
-    DestrezaMin += 2;
-    Inteligencia += 1;
-    InteligenciaMin += 1;
+    Destreza = 10;
+    DestrezaMin = 10;
+    Inteligencia = 9;
+    InteligenciaMin = 9;
 
     //Proficiencias
     Proficiencias.push("Espadas_Longas");
@@ -117,10 +117,10 @@ var Raca = {
 
   ElfoFloresta: function() {
     //Atributos
-    Destreza += 2;
-    DestrezaMin += 2;
-    Sabedoria += 1;
-    SabedoriaMin += 1;
+    Destreza = 10;
+    DestrezaMin = 10;
+    Sabedoria = 9;
+    SabedoriaMin = 9;
 
     //Proficiencias
     Proficiencias.push("Espadas_Longas");
@@ -144,10 +144,10 @@ var Raca = {
 
   ElfoNegro: function() {
     //Atributos
-    Destreza += 2;
-    DestrezaMin += 2;
-    Carisma += 1;
-    CarismaMin += 1;
+    Destreza = 10;
+    DestrezaMin = 10;
+    Carisma = 9;
+    CarismaMin = 9;
 
     //Proficiencias
     Proficiencias.push("Rapieiras");
@@ -171,10 +171,10 @@ var Raca = {
 
   HalflingPesLeves: function() {
     //Atributos
-    Destreza += 2;
-    DestrezaMin += 2;
-    Carisma += 1;
-    CarismaMin += 1;
+    Destreza = 10;
+    DestrezaMin = 10;
+    Carisma = 9;
+    CarismaMin = 9;
 
     //Proficiencias
 
@@ -191,10 +191,10 @@ var Raca = {
 
   HalflingRobusto: function() {
     //Atributos
-    Destreza += 2;
-    DestrezaMin += 2;
-    Constituiçao += 1;
-    ConstituiçaoMin += 1;
+    Destreza = 10;
+    DestrezaMin = 10;
+    Constituiçao = 9;
+    ConstituiçaoMin = 9;
 
     //Proficiencias
 
@@ -211,18 +211,18 @@ var Raca = {
 
   Humano: function() {
     //Atributos
-    Força += 1;
-    ForçaMin += 1;
-    Destreza += 1;
-    DestrezaMin += 1;
-    Constituiçao += 1;
-    ConstituiçaoMin += 1;
-    Inteligencia += 1;
-    InteligenciaMin += 1;
-    Sabedoria += 1;
-    SabedoriaMin += 1;
-    Carisma += 1;
-    CarismaMin += 1;
+    Força = 9;
+    ForçaMin = 9;
+    Destreza = 9;
+    DestrezaMin = 9;
+    Constituiçao = 9;
+    ConstituiçaoMin = 9;
+    Inteligencia = 9;
+    InteligenciaMin = 9;
+    Sabedoria = 9;
+    SabedoriaMin = 9;
+    Carisma = 9;
+    CarismaMin = 9;
 
     //Proficiencias
 
@@ -237,10 +237,10 @@ var Raca = {
 
   Draconato: function() {
     //Atributos
-    Força += 2;
-    ForçaMin += 2;
-    Carisma += 1;
-    CarismaMin += 1;
+    Força = 10;
+    ForçaMin = 10;
+    Carisma = 9;
+    CarismaMin = 9;
 
     //Proficiencias
 
@@ -257,10 +257,10 @@ var Raca = {
 
   GnomoFloresta: function() {
     //Atributos
-    Inteligencia += 2;
-    InteligenciaMin += 2;
-    Destreza += 1;
-    DestrezaMin += 1;
+    Inteligencia = 10;
+    InteligenciaMin = 10;
+    Destreza = 9;
+    DestrezaMin = 9;
 
     //Proficiencias
 
@@ -276,15 +276,15 @@ var Raca = {
 
   GnomoRocha: function() {
     //Atributos
-    Inteligencia += 2;
-    InteligenciaMin += 2;
-    Constituiçao += 1;
-    ConstituiçaoMin += 1;
+    Inteligencia = 10;
+    InteligenciaMin = 10;
+    Constituiçao = 9;
+    ConstituiçaoMin = 9;
 
     //Proficiencias
     Proficiencias.push("Ferramentas_de_Artesão(Engenhoqueiro)");
 
-    //Caracteristicas
+    //Caracteristi Sobrevivência (Scas
     Caracteristicas.push("Visão_no_Escuro");
     Caracteristicas.push("Esperteza_Gnômica");
     Caracteristicas.push("Conhecimento_de_Artifice");
@@ -297,9 +297,9 @@ var Raca = {
 
   MeioElfo: function() {
     //Atributos
-    Carisma += 2;
-    CarismaMin += 2;
-    Extra += 2;
+    Carisma = 10;
+    CarismaMin = 10;
+    Extra = 26;
 
     //Proficiencias
 
@@ -317,6 +317,7 @@ var Raca = {
 
     //Pericias
     PericiasLimite += 2;
+    document.getElementById("PontosLivresPericia").innerHTML = ("Pontos Livres: "+PericiasLimite);
     ClassePericias['Acrobacia']();
     ClassePericias['Arcanismo']();
     ClassePericias['Atletismo']();
@@ -339,15 +340,14 @@ var Raca = {
 
   MeioOrc: function() {
     //Atributos
-    Força += 2;
-    ForçaMin += 2;
-    Constituiçao += 1;
-    ConstituiçaoMin += 1;
+    Força = 10;
+    ForçaMin = 10;
+    Constituiçao = 9;
+    ConstituiçaoMin = 9;
 
     //Proficiencias
 
     //Caracteristicas
-    document.getElementById("Intimidaçao").checked = (true);
     Caracteristicas.push("Visão_no_Escuro");
     Caracteristicas.push("Ameaçador");
     Caracteristicas.push("Resistência_Implacável");
@@ -356,14 +356,20 @@ var Raca = {
     //Idiomas
     Idiomas.push("Comum");
     Idiomas.push("Orc");
+
+    //Pericias
+    document.getElementById("Intimidaçao").checked = (true);
+    document.getElementById("Intimidaçao").disabled = (true);
+    document.getElementById("Intimidaçao").classList.remove("PericiaAtivada");
+    document.getElementById("Intimidaçao").classList.add("PericiaDesativada");
   },
 
   Tiefling: function() {
     //Atributos
-    Carisma += 2;
-    CarismaMin += 2;
-    Inteligencia += 1;
-    InteligenciaMin += 1;
+    Carisma = 10;
+    CarismaMin = 10;
+    Inteligencia = 9;
+    InteligenciaMin = 9;
 
     //Proficiencias
 
@@ -386,6 +392,7 @@ var Classes = {
 
     //Pericias
     PericiasLimite += 2;
+    document.getElementById("PontosLivresPericia").innerHTML = ("Pontos Livres: "+PericiasLimite);
     ClassePericias['Atletismo']();
     ClassePericias['Intimidaçao']();
     ClassePericias['LidarAnimais']();
@@ -400,6 +407,7 @@ var Classes = {
 
     //Pericias
     PericiasLimite += 3;
+    document.getElementById("PontosLivresPericia").innerHTML = ("Pontos Livres: "+PericiasLimite);
     ClassePericias['Acrobacia']();
     ClassePericias['Arcanismo']();
     ClassePericias['Atletismo']();
@@ -426,6 +434,7 @@ var Classes = {
 
     //PericiasClassePericias['']();
     PericiasLimite += 2;
+    document.getElementById("PontosLivresPericia").innerHTML = ("Pontos Livres: "+PericiasLimite);
     ClassePericias['Arcanismo']();
     ClassePericias['Blefar']();
     ClassePericias['Historia']();
@@ -441,6 +450,7 @@ var Classes = {
 
     //Pericias
     PericiasLimite += 2;
+    document.getElementById("PontosLivresPericia").innerHTML = ("Pontos Livres: "+PericiasLimite);
     ClassePericias['Historia']();
     ClassePericias['Intuiçao']();
     ClassePericias['Medicina']();
@@ -454,6 +464,7 @@ var Classes = {
 
     //Pericias
     PericiasLimite += 2;
+    document.getElementById("PontosLivresPericia").innerHTML = ("Pontos Livres: "+PericiasLimite);
     ClassePericias['Arcanismo']();
     ClassePericias['LidarAnimais']();
     ClassePericias['Intuiçao']();
@@ -470,6 +481,7 @@ var Classes = {
 
     //Pericias
     PericiasLimite += 2;
+    document.getElementById("PontosLivresPericia").innerHTML = ("Pontos Livres: "+PericiasLimite);
     ClassePericias['Arcanismo']();
     ClassePericias['Blefar']();
     ClassePericias['Intuiçao']();
@@ -484,6 +496,7 @@ var Classes = {
 
     //Pericias
     PericiasLimite += 2;
+    document.getElementById("PontosLivresPericia").innerHTML = ("Pontos Livres: "+PericiasLimite);
     ClassePericias['Acrobacia']();
     ClassePericias['LidarAnimais']();
     ClassePericias['Atletismo']();
@@ -500,6 +513,7 @@ var Classes = {
 
     //Pericias
     PericiasLimite += 4;
+    document.getElementById("PontosLivresPericia").innerHTML = ("Pontos Livres: "+PericiasLimite);
     ClassePericias['Acrobacia']();
     ClassePericias['Atletismo']();
     ClassePericias['Atuaçao']();
@@ -519,6 +533,7 @@ var Classes = {
 
     //Pericias
     PericiasLimite += 2;
+    document.getElementById("PontosLivresPericia").innerHTML = ("Pontos Livres: "+PericiasLimite);
     ClassePericias['Arcanismo']();
     ClassePericias['Historia']();
     ClassePericias['Intuiçao']();
@@ -533,6 +548,7 @@ var Classes = {
 
     //Pericias
     PericiasLimite += 2;
+    document.getElementById("PontosLivresPericia").innerHTML = ("Pontos Livres: "+PericiasLimite);
     ClassePericias['Acrobacia']();
     ClassePericias['Atletismo']();
     ClassePericias['Furtividade']();
@@ -547,6 +563,7 @@ var Classes = {
 
     //Pericias
     PericiasLimite += 2;
+    document.getElementById("PontosLivresPericia").innerHTML = ("Pontos Livres: "+PericiasLimite);
     ClassePericias['Atletismo']();
     ClassePericias['Intuiçao']();
     ClassePericias['Intimidaçao']();
@@ -561,6 +578,7 @@ var Classes = {
 
     //Pericias
     PericiasLimite += 3;
+    document.getElementById("PontosLivresPericia").innerHTML = ("Pontos Livres: "+PericiasLimite);
     ClassePericias['LidarAnimais']();
     ClassePericias['Atletismo']();
     ClassePericias['Furtividade']();
@@ -604,6 +622,15 @@ function PrintIdioma() {
     document.getElementById("Lingua").value += (Printf + "\n");
   }
 
+}
+
+function PrintModAtributo() {
+  ModAtributos['ModFor']();
+  ModAtributos['ModDes']();
+  ModAtributos['ModCons']();
+  ModAtributos['ModInt']();
+  ModAtributos['ModSab']();
+  ModAtributos['ModCar']();
 }
 
 //Apagar
@@ -688,7 +715,7 @@ var AtributosSelecao = {
       Força -= 1;
       Extra += 1;
       PrintAtributos();
-      ModAtributo();
+      ModAtributos['ModFor']();
     } else {
       alert("Não pode diminuir mais!")
     }
@@ -699,7 +726,7 @@ var AtributosSelecao = {
         Força += 1;
         Extra -= 1;
         PrintAtributos();
-        ModAtributo();
+        ModAtributos['ModFor']();
       } else {
         alert("Acabou seus pontos!");
       }
@@ -712,7 +739,7 @@ var AtributosSelecao = {
       Destreza -= 1;
       Extra += 1;
       PrintAtributos();
-      ModAtributo();
+      ModAtributos['ModDes']();
     } else {
       alert("Não pode diminuir mais!")
     }
@@ -723,7 +750,7 @@ var AtributosSelecao = {
         Destreza += 1;
         Extra -= 1;
         PrintAtributos();
-        ModAtributo();
+        ModAtributos['ModDes']();
       } else {
         alert("Acabou seus pontos!");
       }
@@ -736,7 +763,7 @@ var AtributosSelecao = {
       Constituiçao -= 1;
       Extra += 1;
       PrintAtributos()
-      ModAtributo();
+      ModAtributos['ModCons']();
     } else {
       alert("Não pode diminuir mais!")
     }
@@ -747,7 +774,7 @@ var AtributosSelecao = {
         Constituiçao += 1;
         Extra -= 1;
         PrintAtributos();
-        ModAtributo();
+        ModAtributos['ModCons']();
       } else {
         alert("Acabou seus pontos!");
       }
@@ -760,7 +787,7 @@ var AtributosSelecao = {
       Inteligencia -= 1;
       Extra += 1;
       PrintAtributos();
-      ModAtributo();
+      ModAtributos['ModInt']();
     } else {
       alert("Não pode diminuir mais!")
     }
@@ -771,7 +798,7 @@ var AtributosSelecao = {
         Inteligencia += 1;
         Extra -= 1;
         PrintAtributos();
-        ModAtributo();
+        ModAtributos['ModInt']();
       } else {
         alert("Acabou seus pontos!");
       }
@@ -784,7 +811,7 @@ var AtributosSelecao = {
       Sabedoria -= 1;
       Extra += 1;
       PrintAtributos();
-      ModAtributo();
+      ModAtributos['ModSab']();
     } else {
       alert("Não pode diminuir mais!")
     }
@@ -795,7 +822,7 @@ var AtributosSelecao = {
         Sabedoria += 1;
         Extra -= 1;
         PrintAtributos();
-        ModAtributo();
+        ModAtributos['ModSab']();
       } else {
         alert("Acabou seus pontos!");
       }
@@ -808,7 +835,7 @@ var AtributosSelecao = {
       Carisma -= 1;
       Extra += 1;
       PrintAtributos();
-      ModAtributo();
+      ModAtributos['ModCar']();
     } else {
       alert("Não pode diminuir mais!")
     }
@@ -819,7 +846,7 @@ var AtributosSelecao = {
         Carisma += 1;
         Extra -= 1;
         PrintAtributos();
-        ModAtributo();
+        ModAtributos['ModCar']();
       } else {
         alert("Acabou seus pontos!");
       }
@@ -922,6 +949,165 @@ var ClassePericias = {
   }
 }
 
+var ModAtributos = {
+  ModFor: function () {
+    VarX = Força/2;
+    VarY = Math.floor(VarX);
+    VarZ = VarY-5;
+    document.getElementById("ModFor").innerHTML = ("ModForça: " + VarZ);
+    if (document.getElementById("ResFor").checked == true) {
+      document.getElementById("ResForNum").innerHTML = ((VarZ+ProfBonus) + " Força");
+    } else {
+      document.getElementById("ResForNum").innerHTML = (VarZ + " Força");
+    }
+    if (document.getElementById("Atletismo").checked == true) {
+      document.getElementById('AtletismoNum').innerHTML = ((VarZ + ProfBonus) + " Atletismo <i>(For)</i>");
+    } else {
+      document.getElementById('AtletismoNum').innerHTML = (VarZ + " Atletismo <i>(For)</i>");
+    }
+  },
+  ModDes: function () {
+    VarX = Destreza/2;
+    VarY = Math.floor(VarX);
+    VarZ = VarY-5;
+    document.getElementById("ModDes").innerHTML = ("ModDestreza: " + VarZ);
+    if (document.getElementById("ResDes").checked == true) {
+      document.getElementById("ResDesNum").innerHTML = ((VarZ+ProfBonus) + " Destreza");
+    } else {
+      document.getElementById("ResDesNum").innerHTML = (VarZ + " Destreza");
+    }
+    if (document.getElementById("Acrobacia").checked == true) {
+      document.getElementById('AcrobaciaNum').innerHTML = ((VarZ + ProfBonus) + " Acrobacia <i>(Des)</i>");
+    } else {
+      document.getElementById('AcrobaciaNum').innerHTML = (VarZ + " Acrobacia <i>(Des)</i>");
+    }
+    if (document.getElementById("Furtividade").checked == true) {
+      document.getElementById('FurtividadeNum').innerHTML = ((VarZ + ProfBonus) + " Furtividade <i>(Des)</i>");
+    } else {
+      document.getElementById('FurtividadeNum').innerHTML = (VarZ + " Furtividade <i>(Des)</i>");
+    }
+    if (document.getElementById("Prestidigitaçao").checked == true) {
+      document.getElementById('PrestidigitaçaoNum').innerHTML = ((VarZ + ProfBonus) + " Prestidigitação <i>(Des)</i>");
+    } else {
+      document.getElementById('PrestidigitaçaoNum').innerHTML = (VarZ + " Prestidigitação <i>(Des)</i>");
+    }
+  },
+  ModCons: function () {
+    VarX = Constituiçao/2;
+    VarY = Math.floor(VarX);
+    VarZ = VarY-5;
+    document.getElementById("ModCons").innerHTML = ("ModConstituição: " + VarZ);
+    if (document.getElementById("ResCons").checked == true) {
+      document.getElementById("ResConsNum").innerHTML = ((VarZ+ProfBonus) + " Constituição");
+    } else {
+      document.getElementById("ResConsNum").innerHTML = (VarZ + " Constituição");
+    }
+  },
+  ModInt: function () {
+    VarX = Inteligencia/2;
+    VarY = Math.floor(VarX);
+    VarZ = VarY-5;
+    document.getElementById("ModInt").innerHTML = ("ModInteligência: " + VarZ);
+    if (document.getElementById("ResInt").checked == true) {
+      document.getElementById("ResIntNum").innerHTML = ((VarZ+ProfBonus) + " Inteligência");
+    } else {
+      document.getElementById("ResIntNum").innerHTML = (VarZ + " Inteligência");
+    }
+    if (document.getElementById("Arcanismo").checked == true) {
+      document.getElementById('ArcanismoNum').innerHTML = ((VarZ + ProfBonus) + " Arcanismo <i>(Int)</i>");
+    } else {
+      document.getElementById('ArcanismoNum').innerHTML = (VarZ + " Arcanismo <i>(Int)</i>");
+    }
+    if (document.getElementById("Historia").checked == true) {
+      document.getElementById('HistoriaNum').innerHTML = ((VarZ + ProfBonus) + " História <i>(Int)</i>");
+    } else {
+      document.getElementById('HistoriaNum').innerHTML = (VarZ + " História <i>(Int)</i>");
+    }
+    if (document.getElementById("Investigaçao").checked == true) {
+      document.getElementById('InvestigaçaoNum').innerHTML = ((VarZ + ProfBonus) + " Investigação <i>(Int)</i>");
+    } else {
+      document.getElementById('InvestigaçaoNum').innerHTML = (VarZ + " Investigação <i>(Int)</i>");
+    }
+    if (document.getElementById("Natureza").checked == true) {
+      document.getElementById('NaturezaNum').innerHTML = ((VarZ + ProfBonus) + " Natureza <i>(Int)</i>");
+    } else {
+      document.getElementById('NaturezaNum').innerHTML = (VarZ + " Natureza <i>(Int)</i>");
+    }
+    if (document.getElementById("Religiao").checked == true) {
+      document.getElementById('ReligiaoNum').innerHTML = ((VarZ + ProfBonus) + " Religião <i>(Int)</i>");
+    } else {
+      document.getElementById('ReligiaoNum').innerHTML = (VarZ + " Religião <i>(Int)</i>");
+    }
+  },
+  ModSab: function () {
+    VarX = Sabedoria/2;
+    VarY = Math.floor(VarX);
+    VarZ = VarY-5;
+    document.getElementById("ModSab").innerHTML = ("ModSabedoria: " + VarZ);
+    if (document.getElementById("ResSab").checked == true) {
+      document.getElementById("ResSabNum").innerHTML = ((VarZ+ProfBonus) + " Sabedoria");
+    } else {
+      document.getElementById("ResSabNum").innerHTML = (VarZ + " Sabedoria");
+    }
+    if (document.getElementById("Intuiçao").checked == true) {
+      document.getElementById("IntuiçaoNum").innerHTML = ((VarZ + ProfBonus) + " Intuição <i>(Sab)</i>");
+    } else {
+      document.getElementById("IntuiçaoNum").innerHTML = (VarZ + " Intuição <i>(Sab)</i>");
+    }
+    if (document.getElementById("LidarAnimais").checked == true) {
+      document.getElementById("LidarAnimaisNum").innerHTML = ((VarZ + ProfBonus) + " Lidar_Com_Animais <i>(Sab)</i>");
+    } else {
+      document.getElementById("LidarAnimaisNum").innerHTML = (VarZ + " Lidar_Com_Animais <i>(Sab)</i>");
+    }
+    if (document.getElementById("Medicina").checked == true) {
+      document.getElementById("MedicinaNum").innerHTML = ((VarZ + ProfBonus) + " Medicina <i>(Sab)</i>");
+    } else {
+      document.getElementById("MedicinaNum").innerHTML = (VarZ + " Medicina <i>(Sab)</i>");
+    }
+    if (document.getElementById("Percepçao").checked == true) {
+      document.getElementById("PercepçaoNum").innerHTML = ((VarZ + ProfBonus) + " Percepção <i>(Sab)</i>");
+    } else {
+      document.getElementById("PercepçaoNum").innerHTML = (VarZ + " Percepção <i>(Sab)</i>");
+    }
+    if (document.getElementById("Sobrevivencia").checked == true) {
+      document.getElementById("SobrevivenciaNum").innerHTML = ((VarZ + ProfBonus) + " Sobrevivência <i>(Sab)</i>");
+    } else {
+      document.getElementById("SobrevivenciaNum").innerHTML = (VarZ + " Sobrevivência <i>(Sab)</i>");
+    }
+  },
+  ModCar: function () {
+    VarX = Carisma/2;
+    VarY = Math.floor(VarX);
+    VarZ = VarY-5;
+    document.getElementById("ModCar").innerHTML = ("ModCarisma: " + VarZ);
+    if (document.getElementById("ResCar").checked == true) {
+      document.getElementById("ResCarNum").innerHTML = ((VarZ+ProfBonus) + " Carisma");
+    } else {
+      document.getElementById("ResCarNum").innerHTML = (VarZ + " Carisma");
+    }
+    if (document.getElementById("Atuaçao").checked == true) {
+      document.getElementById('AtuaçaoNum').innerHTML = ((VarZ + ProfBonus) + " Atuação <i>(Car)</i>");
+    } else {
+      document.getElementById('AtuaçaoNum').innerHTML = (VarZ + " Atuação <i>(Car)</i>");
+    }
+    if (document.getElementById("Blefar").checked == true) {
+      document.getElementById('BlefarNum').innerHTML = ((VarZ + ProfBonus) + " Blefar <i>(Car)</i>");
+    } else {
+      document.getElementById('BlefarNum').innerHTML = (VarZ + " Blefar <i>(Car)</i>");
+    }
+    if (document.getElementById("Intimidaçao").checked == true) {
+      document.getElementById('IntimidaçaoNum').innerHTML = ((VarZ + ProfBonus) + " Intimidação <i>(Car)</i>");
+    } else {
+      document.getElementById('IntimidaçaoNum').innerHTML = (VarZ + " Intimidação <i>(Car)</i>");
+    }
+    if (document.getElementById("Persuasao").checked == true) {
+      document.getElementById('PersuasaoNum').innerHTML = ((VarZ + ProfBonus) + " Persuasão <i>(Car)</i>");
+    } else {
+      document.getElementById('PersuasaoNum').innerHTML = (VarZ + " Persuasão <i>(Car)</i>");
+    }
+  }
+}
+
 function DistribuirPontosAtributos() {
   AtributoBotaoClick = document.querySelectorAll("button[class='BotaoAtributo']:hover");
   AtributosSelecao[(AtributoBotaoClick[0].id)]();
@@ -930,6 +1116,7 @@ function DistribuirPontosAtributos() {
 function DistribuirPericias() {
   PericiasAtivadasChecked = document.querySelectorAll("input[class='PericiaAtivada']:checked")
   PericiasAtivadasUnchecked = document.querySelectorAll("input[class='PericiaAtivada']:not(:checked)")
+  document.getElementById("PontosLivresPericia").innerHTML = ("Pontos Livres: "+(PericiasLimite-(PericiasAtivadasChecked.length)))
   if (PericiasAtivadasChecked.length == PericiasLimite) {
     for (var i = 0; i < PericiasAtivadasUnchecked.length; i++) {
       PericiasAtivadasUnchecked[i].disabled = (true);
@@ -963,6 +1150,7 @@ function RaçaMudanca() {
   PrintProficiencias();
   PrintCaracteristicas();
   PrintIdioma();
+  PrintModAtributo();
 }
 
 function ClasseMudanca() {
@@ -977,11 +1165,12 @@ function ClasseMudanca() {
   ApagarPericia();
 
   //Mudanças
-  Raca[EscolhaRaca]();
   Classes[EscolhaClasse]();
+  Raca[EscolhaRaca]();
 
   //Prints
   PrintProficiencias();
   PrintCaracteristicas();
   PrintIdioma();
+  PrintModAtributo();
 }
